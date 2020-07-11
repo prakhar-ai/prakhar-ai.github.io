@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on A minimal Hugo website</title>
-    <link>prakhar-ai.github.io/posts/</link>
+    <link>/posts/</link>
     <description>Recent content in Posts on A minimal Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 11 Jul 2020 12:38:44 +0530</lastBuildDate>
     
-	<atom:link href="prakhar-ai.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Web scraping with Lxml and XPaths in Python</title>
-      <link>prakhar-ai.github.io/posts/web-scraping-with-lxml-and-xpaths-in-python/</link>
+      <link>/posts/web-scraping-with-lxml-and-xpaths-in-python/</link>
       <pubDate>Sat, 11 Jul 2020 12:38:44 +0530</pubDate>
       
-      <guid>prakhar-ai.github.io/posts/web-scraping-with-lxml-and-xpaths-in-python/</guid>
+      <guid>/posts/web-scraping-with-lxml-and-xpaths-in-python/</guid>
       <description>Background When choosing to scrape data online with Python, Most beginners tend to go with BeautifulSoup, a popular beginner friendly library for web scraping. Although Beautifulsoup claims to be better at parsing HTML, I hit a roadblock using the soupparser and decided to switch to Lxml to scrape data instead. Lxml can work with BeautifulSoup’s parser and vice versa, but I found using Lxml and Xpaths to be far more simpler and faster than Beautifulsoup when finding specific elements deep inside the HTML code.</description>
     </item>
     
