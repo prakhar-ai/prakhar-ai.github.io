@@ -2,7 +2,7 @@ body {
   max-width: 800px;
   margin: auto;
   padding: 1em;
-  line-height: 1.5em;
+  line-height: 2em;
 }
 
 /* header and footer areas */
@@ -17,9 +17,6 @@ body {
 .menu, .article-meta, footer { text-align: center; }
 .title { 
   font-size: 1.0em;
-  line-height: 2em;
-  color: blue;
-  padding: 1em;
 }
 footer a { text-decoration: none; }
 hr {
