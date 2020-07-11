@@ -18,7 +18,8 @@ body {
 .title { 
   font-size: 1.0em;
   line-height: 2em;
-  color: #fgf;
+  color: blue;
+  padding: 1em;
 }
 footer a { text-decoration: none; }
 hr {
