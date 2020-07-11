@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Web scraping with Lxml and XPaths in Python</title>
+      <title>Web scraping with Lxml and XPaths in Python (Part 1)</title>
       <link>/posts/web-scraping-with-lxml-and-xpaths-in-python/</link>
       <pubDate>Sat, 11 Jul 2020 12:38:44 +0530</pubDate>
       
       <guid>/posts/web-scraping-with-lxml-and-xpaths-in-python/</guid>
-      <description>Background When choosing to scrape data online with Python, Most beginners tend to go with BeautifulSoup, a popular beginner friendly library for web scraping. Although Beautifulsoup claims to be better at parsing HTML, I hit a roadblock using the soupparser and decided to switch to Lxml to scrape data instead. Lxml can work with BeautifulSoup’s parser and vice versa, but I found using Lxml and Xpaths to be far more simpler and faster than Beautifulsoup when finding specific elements deep inside the HTML code.</description>
+      <description>Background When choosing to scrape data online with Python, Most beginners tend to go with BeautifulSoup, a popular beginner friendly library for web scraping. Although Beautifulsoup claims to be better at parsing HTML, I hit a roadblock using the soupparser and decided to switch to Lxml to scrape data instead. Lxml can work with BeautifulSoup’s parser and vice versa, but I found using Lxml and XPaths to be far more simpler and faster than Beautifulsoup when finding specific elements deep inside the HTML code.</description>
     </item>
     
   </channel>

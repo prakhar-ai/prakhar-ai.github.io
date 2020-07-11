@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Web scraping with Lxml and XPaths in Python | A minimal Hugo website</title>
+    <title>Web scraping with Lxml and XPaths in Python (Part 1) | A minimal Hugo website</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
     
@@ -28,7 +28,7 @@
     </nav>
 
 <div class="article-meta">
-<h1><span class="title">Web scraping with Lxml and XPaths in Python</span></h1>
+<h1><span class="title">Web scraping with Lxml and XPaths in Python (Part 1)</span></h1>
 
 <h2 class="date">2020/07/11</h2>
 </div>
@@ -45,20 +45,69 @@ Although Beautifulsoup claims to be better at parsing HTML,
  I hit a roadblock using the soupparser and decided to switch
  to Lxml to scrape data instead. Lxml can work with
 BeautifulSoup’s parser and vice versa, but
-I found using <strong>Lxml</strong> and <strong>Xpaths</strong> to be far more simpler and faster than
+I found using <strong>Lxml</strong> and <strong>XPaths</strong> to be far more simpler and faster than
 Beautifulsoup when finding specific elements deep inside the HTML code.</p>
 
 <h2 id="introduction-to-xpaths">Introduction to  XPaths</h2>
 
-<p>Xpaths work very much like a traditional file system.</p>
+<p>Xpaths work very much like a traditional file system</p>
 
 <p><img src="/tree1.svg" alt="File System Tree" /></p>
 
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">page <span style="color:#333">=</span> requests<span style="color:#333">.</span>get(<span style="background-color:#e0e0ff">&#39;https://bschool.careers360.com/colleges/ranking/2020?page=1&#39;</span>)<span style="color:#333">.</span>text
-source_code <span style="color:#333">=</span> html<span style="color:#333">.</span>fromstring(page)
+<p>To access file 1,</p>
 
-<span style="color:#289;font-weight:bold">for</span> x <span style="color:#000;font-weight:bold">in</span> <span style="color:#072">range</span>(<span style="color:#66f;font-weight:bold">1</span>,<span style="color:#66f;font-weight:bold">103</span>):
-        college_name<span style="color:#333">.</span>append(source_code<span style="color:#333">.</span>xpath(<span style="background-color:#e0e0ff">&#34;/html/body/div[2]/section[1]/div[3]/div[2]/table/tbody/tr[&#34;</span> <span style="color:#333">+</span> <span style="color:#072">str</span>(x) <span style="color:#333">+</span> <span style="background-color:#e0e0ff">&#34;]/td[2]/a/text()&#34;</span>))</code></pre></div>
+<pre><code>C:/File1
+</code></pre>
+
+<p>Similarly, To access file 2,</p>
+
+<pre><code>C:/Documents/User1/File2
+</code></pre>
+
+<p>Now consider a simple web page,
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#070">html</span>&gt;
+    &lt;<span style="color:#070">head</span>&gt;
+        &lt;<span style="color:#070">title</span>&gt;My page&lt;/<span style="color:#070">title</span>&gt;
+    &lt;/<span style="color:#070">head</span>&gt;
+    &lt;<span style="color:#070">body</span>&gt;
+        &lt;<span style="color:#070">h2</span>&gt;Welcome to my page&lt;<span style="color:#070">h2</span>&gt;
+       &lt;<span style="color:#070">a</span> <span style="color:#007">href</span><span style="color:#333">=</span><span style="background-color:#e0e0ff">&#34;www.example.com&#34;</span>&gt;page&lt;/<span style="color:#070">a</span>&gt;
+        &lt;<span style="color:#070">p</span>&gt;This is the first paragraph&lt;/<span style="color:#070">p</span>&gt;
+        &lt;<span style="color:#070">h2</span>&gt;Hello World&lt;/<span style="color:#070">h2</span>&gt;
+    &lt;/<span style="color:#070">body</span>&gt;
+&lt;/<span style="color:#070">html</span>&gt;</code></pre></div></p>
+
+<p>This can be represented as an XML Tree as follows,</p>
+
+<p><img src="/tree2.svg" alt="File System Tree" /></p>
+
+<p>For getting the text inside the <strong><em>p</em></strong> tag,<br></p>
+
+<pre><code>XPath : html/body/p/text()
+</code></pre>
+
+<pre><code>Result : This is the first paragraph
+</code></pre>
+
+<p>For getting an value inside the <em>href</em> attribute in the <strong><em>a</em></strong> tag,</p>
+
+<pre><code>XPath : html/body/a/@href
+</code></pre>
+
+<pre><code>Result: www.example.com
+</code></pre>
+
+<p>For getting the value inside the second <strong><em>h2</em></strong> tag,</p>
+
+<pre><code>XPath : html/body/h2[2]/text()
+</code></pre>
+
+<pre><code>Result: Hello World
+</code></pre>
+
+<p><br>
+A more comprehensive guide to XPaths can be found <a href="https://www.javatpoint.com/xpath-tutorial">here</a>.<br>
+You can play around with Xpaths <a href="https://scrapinghub.github.io/xpath-playground/">here</a>.</p>
 
 </main>
 
