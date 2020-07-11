@@ -11,9 +11,9 @@ line-height: 2em; }
 .menu li { display: inline-block;}
 .article-meta, .menu a {
   text-decoration: none;
-  background: #eee;
+  background: #f2f5f7;
   padding: 7px;
-  border-radius: 5px;
+  border-radius: 1px;
   line-height: 2em;
 }
 .h1 {
@@ -24,8 +24,7 @@ line-height: 2em; }
 .title { font-size: 1.1em; line-height: normal; }
 footer a { text-decoration: none; }
 hr {
-  border-style: dashed;
-  color: #ddd;
+  color: #646664;
 }
 
 /* code */
@@ -55,3 +54,7 @@ table {
 table thead th { border-bottom: 1px solid #ddd; }
 th, td { padding: 5px; }
 thead, tfoot, tr:nth-child(even) { background: #eee; }
+
+a {
+  color:#141414;
+}
