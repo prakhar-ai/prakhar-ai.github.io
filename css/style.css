@@ -7,14 +7,13 @@ body {
 
 /* header and footer areas */
 .menu { padding: 0; }
-.menu li { display: inline-block;
-  line-height: 4em; }
+.menu li { display: inline-block;}
 .article-meta, .menu a {
   text-decoration: none;
   background: #eee;
   padding: 10px;
   border-radius: 5px;
-  line-height: 4em
+  line-height: 4em;
 }
 .h1 {
   padding: 1em;
