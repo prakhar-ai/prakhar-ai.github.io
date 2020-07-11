@@ -11,8 +11,9 @@ body {
 .article-meta, .menu a {
   text-decoration: none;
   background: #eee;
-  padding: 5px;
+  padding: 8px;
   border-radius: 5px;
+  line-height: 2em
 }
 .h1 {
   padding: 1em;
