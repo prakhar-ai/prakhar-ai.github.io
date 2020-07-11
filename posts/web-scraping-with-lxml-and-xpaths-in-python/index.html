@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web scraping with Lxml and XPaths in Python | A minimal Hugo website</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/index.xml">Subscribe</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Web scraping with Lxml and XPaths in Python</span></h1>
+
+<h2 class="date">2020/07/11</h2>
+</div>
+
+<main>
+
+
+<h2 id="background">Background</h2>
+
+<p>When choosing to scrape data online with Python,
+Most beginners tend to go with <strong>BeautifulSoup</strong>,
+a popular beginner friendly library for web scraping.
+Although Beautifulsoup claims to be better at parsing HTML,
+ I hit a roadblock using the soupparser and decided to switch
+ to Lxml to scrape data instead. Lxml can work with
+BeautifulSoup’s parser and vice versa, but
+I found using <strong>Lxml</strong> and <strong>Xpaths</strong> to be far more simpler and faster than
+Beautifulsoup when finding specific elements deep inside the HTML code.</p>
+
+<h2 id="introduction-to-xpaths">Introduction to  XPaths</h2>
+
+<p>Xpaths work very much like a traditional file system.</p>
+
+<p><img src="/tree1.svg" alt="File System Tree" /></p>
+
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">page <span style="color:#333">=</span> requests<span style="color:#333">.</span>get(<span style="background-color:#e0e0ff">&#39;https://bschool.careers360.com/colleges/ranking/2020?page=1&#39;</span>)<span style="color:#333">.</span>text
+source_code <span style="color:#333">=</span> html<span style="color:#333">.</span>fromstring(page)
+
+<span style="color:#289;font-weight:bold">for</span> x <span style="color:#000;font-weight:bold">in</span> <span style="color:#072">range</span>(<span style="color:#66f;font-weight:bold">1</span>,<span style="color:#66f;font-weight:bold">103</span>):
+        college_name<span style="color:#333">.</span>append(source_code<span style="color:#333">.</span>xpath(<span style="background-color:#e0e0ff">&#34;/html/body/div[2]/section[1]/div[3]/div[2]/table/tbody/tr[&#34;</span> <span style="color:#333">+</span> <span style="color:#072">str</span>(x) <span style="color:#333">+</span> <span style="background-color:#e0e0ff">&#34;]/td[2]/a/text()&#34;</span>))</code></pre></div>
+
+</main>
+
+  <footer>
+  
+  
+  <hr/>
+  &copy; <a href="https://yihui.name">Yihui Xie</a> 2017 &ndash; 2019 | <a href="https://github.com/yihui">Github</a> | <a href="https://twitter.com/xieyihui">Twitter</a>
+  
+  </footer>
+  </body>
+</html>
+
