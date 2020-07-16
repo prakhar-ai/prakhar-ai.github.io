@@ -12,7 +12,42 @@ var BCECProf = {
     'DAA':'DSJ'
 }
 
-var PDTut = ['Prof. Anuja Nair','Prof. P.N.Kapil','Prof. H.Kapadia,Prof','Pronoy Bhattacharya']
+var BCEAProf = {
+    'ML':'PBT',
+    'SE':'DV',
+    'CN':'ZAN',
+    'DAA':'SG'
+}
+var BCEBProf = {
+    'ML':'RAK',
+    'SE':'DV',
+    'CN':'ZAN',
+    'DAA':'SG'
+}
+var BCEDProf = {
+    'ML':'PBT',
+    'SE':'MZ',
+    'CN':'USB',
+    'DAA':'DSJ'
+}
+
+A1 = ['CN','ML','DAA','SE']
+A1Prof = ['AV','PBT','SG','DV']
+A2 = ['ML','CN','SE','DAA']
+A2Prof = ['PBT','TAJH','DV','DSJ']
+A3 = ['ML','DAA','SE','CN']
+A3Prof = ['TAMT','RKD','KRL','USB']
+A4 = ['DAA','SE','ML','CN']
+A4Prof = ['RKD','DV','SJ','VUP']
+
+B1 = ['DAA','CN','ML','SE']
+B1Prof = ['DSJ','AV','TAMT','MDB']
+B2 = ['SE','ML','CN','DAA']
+B2Prof = ['SSD','RAK','ZAN','DSJ']
+B3 = ['SE','DAA','ML','CN']
+B3Prof = ['SSD','DSJ','RAK','ZAN']
+B4 = ['CN','SE','DAA','ML']
+B4Prof = ['VUP','SSD','LG','RAK']
 
 
 C1 = ['DAA','CN','SE','ML']
@@ -24,6 +59,33 @@ C3Prof = ['RAK','CT','PRS','CT']
 C4 = ['CN','SE','DAA','ML']
 C4Prof = ['ZAN','MZ','SG','TAJS']
 
+D1 = ['CN','ML','SE','DAA']
+D1Prof = ['USB','PBT','SSD','SM']
+D2 = ['ML','CN','DAA','SE']
+D2Prof = ['SJ','TARG','DSJ','MZ']
+D3 = ['DAA','SE','CN','ML']
+D3Prof = ['CT','PRS','VU','SJ']
+D4 = ['SE','DAA','ML','CN']
+D4Prof = ['DV','AT','TAJS','TAJH']
+
+AT1 = ['','','DAA']
+AT1Prof = 'SG'
+AT2 = ['','','DAA']
+AT2Prof = 'RKD'
+AT3 = ['DAA','','']
+AT3Prof = 'DSJ'
+AT4 = ['','DAA','']
+AT4Prof = 'DSJ'
+
+BT1 = ['','','DAA']
+BT1Prof = 'TU'
+BT2 = ['DAA','','']
+BT2Prof = 'RKD'
+BT3 = ['','DAA','']
+BT3Prof = 'DSJ'
+BT4 = ['','DAA','']
+BT4Prof = 'RKD'
+
 CT1 = ['DAA','','']
 CT1Prof = 'SG'
 CT2 = ['','DAA','']
@@ -33,7 +95,16 @@ CT3Prof = 'JP'
 CT4 = ['','','DAA']
 CT4Prof = 'DSJ'
 
+DT1 = ['DAA','','']
+DT1Prof = 'DSJ'
+DT2 = ['DAA','','']
+DT2Prof = 'JP'
+DT3 = ['','','DAA']
+DT3Prof = 'DSJ'
+DT4 = ['DAA','','']
+DT4Prof = 'TU'
 
+var PDTut = ['Prof. Anuja Nair','Prof. P.N.Kapil','Prof. H.Kapadia,Prof','Pronoy Bhattacharya']
 var dismanprof = ['Prof. Anant Patel','Prof. Anant Patel','Prof. Alka Shah']
 
 var Electives = 
@@ -69,7 +140,25 @@ var ElectiveProf =
     'OB' : 'Prof. Parul Bhatti',
     'BQM' : 'Prof. Anand Patel',
 }
+
 function myFunction() {
+    var SD1Prof ='';
+    var SD2Prof = '';
+    var SD3Prof = '';
+    var SD4Prof = '';
+    var SD1 = '';
+    var SD2 = '';
+    var SD3 = '';
+    var SD4 = '';
+    var STD1Prof = '';
+    var STD2Prof = '';
+    var STD3Prof = '';
+    var STD4Prof = '';
+    var STD1 = '';
+    var STD2 = '';
+    var STD3 = '';
+    var STD4 = '';
+    var DivProf = '';
     var division = document.getElementById("Div").value;
     var subdiv = document.getElementById("SubDiv").value;
     var tutdiv = document.getElementById("TutDiv").value;
@@ -83,6 +172,7 @@ function myFunction() {
     var tutctr = 0;
     var electr = 0;
     var dismanctr = 0;
+
     var r=1;
     while(row=table.rows[r++])
     {
@@ -92,9 +182,84 @@ function myFunction() {
       $(cell).css("background-color", "");
 
     }
-}
+    }
+    if(division=='A') {
+        SD1Prof = A1Prof;
+        SD2Prof = A2Prof;
+        SD3Prof = A3Prof;
+        SD4Prof = A4Prof;
+        SD1 = A1;
+        SD2 = A2;
+        SD3 = A3;
+        SD4 = A4;
+        STD1Prof = AT1Prof;
+        STD2Prof = AT2Prof;
+        STD3Prof = AT3Prof;
+        STD4Prof = AT4Prof;
+        STD1 = AT1;
+        STD2 = AT2;
+        STD3 = AT3;
+        STD4 = AT4;
+        DivProf = BCEAProf;
+    }
+    if(division=='B') {
+        SD1Prof = B1Prof;
+        SD2Prof = B2Prof;
+        SD3Prof = B3Prof;
+        SD4Prof = B4Prof;
+        SD1 = B1;
+        SD2 = B2;
+        SD3 = B3;
+        SD4 = B4;
+        STD1Prof = BT1Prof;
+        STD2Prof = BT2Prof;
+        STD3Prof = BT3Prof;
+        STD4Prof = BT4Prof;
+        STD1 = BT1;
+        STD2 = BT2;
+        STD3 = BT3;
+        STD4 = BT4;
+        DivProf = BCEBProf;
+    }
+    if(division=='C') {
+        SD1Prof = C1Prof;
+        SD2Prof = C2Prof;
+        SD3Prof = C3Prof;
+        SD4Prof = C4Prof;
+        SD1 = C1;
+        SD2 = C2;
+        SD3 = C3;
+        SD4 = C4;
+        STD1Prof = CT1Prof;
+        STD2Prof = CT2Prof;
+        STD3Prof = CT3Prof;
+        STD4Prof = CT4Prof;
+        STD1 = CT1;
+        STD2 = CT2;
+        STD3 = CT3;
+        STD4 = CT4;
+        DivProf = BCECProf;
+    }
+    if(division=='D') {
+        SD1Prof = D1Prof;
+        SD2Prof = D2Prof;
+        SD3Prof = D3Prof;
+        SD4Prof = D4Prof;
+        SD1 = D1;
+        SD2 = D2;
+        SD3 = D3;
+        SD4 = D4;
+        STD1Prof = DT1Prof;
+        STD2Prof = DT2Prof;
+        STD3Prof = DT3Prof;
+        STD4Prof = DT4Prof;
+        STD1 = DT1;
+        STD2 = DT2;
+        STD3 = DT3;
+        STD4 = DT4;
+        DivProf = BCEDProf;
+    }
 
-if(division=='C') {
     r=1;
     while(row=table.rows[r++])
     {
@@ -104,25 +269,25 @@ if(division=='C') {
 
         if(BCEC[i] == "LAB") {
             if(subdiv == 1){
-                cell.innerHTML= SubjectCodes[C1[labctr]] + "<br> <b>LAB</b> <br> <i>" + ProfKey[C1Prof[labctr]] + "</i>" ;
+                cell.innerHTML= SubjectCodes[SD1[labctr]] + "<br> <b>LAB</b> <br> <i>" + ProfKey[SD1Prof[labctr]] + "</i>" ;
                 $(cell).css("background-color", "#f0f2eb");
                 labctr++;
                 i++;
             }
             if(subdiv == 2){
-                cell.innerHTML=SubjectCodes[C2[labctr]] + "<br> <b>LAB</b> <br> <i>"  + ProfKey[C2Prof[labctr]] + "</i>" ;
+                cell.innerHTML=SubjectCodes[SD2[labctr]] + "<br> <b>LAB</b> <br> <i>"  + ProfKey[SD2Prof[labctr]] + "</i>" ;
                 $(cell).css("background-color", "#f0f2eb");
                 labctr++;
                 i++;
             }
             if(subdiv == 3){
-                cell.innerHTML=SubjectCodes[C3[labctr]] + "<br> <b>LAB</b> <br> <i>"  + ProfKey[C3Prof[labctr]] + "</i>";
+                cell.innerHTML=SubjectCodes[SD3[labctr]] + "<br> <b>LAB</b> <br> <i>"  + ProfKey[SD3Prof[labctr]] + "</i>";
                 $(cell).css("background-color", "#f0f2eb");
                 labctr++;
                 i++;
             }
             if(subdiv == 4){
-                cell.innerHTML=SubjectCodes[C4[labctr]] + "<br> <b>LAB</b> <br> <i>"  + ProfKey[C4Prof[labctr]] + "</i>";
+                cell.innerHTML=SubjectCodes[SD4[labctr]] + "<br> <b>LAB</b> <br> <i>"  + ProfKey[SD4Prof[labctr]] + "</i>";
                 $(cell).css("background-color", "#f0f2eb");
                 labctr++;
                 i++;
@@ -131,32 +296,32 @@ if(division=='C') {
         }
         else if(BCEC[i] == "TUT") {
             if(tutdiv == 1){
-                if(CT1[tutctr]!=''){
-                    cell.innerHTML=SubjectCodes[CT1[tutctr]] + "<br> <b>TUTORIAL</b>" + "<br> <i>"  + ProfKey[CT1Prof] + "</i>";
+                if(STD1[tutctr]!=''){
+                    cell.innerHTML=SubjectCodes[STD1[tutctr]] + "<br> <b>TUTORIAL</b>" + "<br> <i>"  + ProfKey[STD1Prof] + "</i>";
                     $(cell).css("background-color", "#f0eae6");
                 }
                 tutctr++;
                 i++;
             }
             if(tutdiv == 2){
-                if(CT2[tutctr]!=''){
-                    cell.innerHTML=SubjectCodes[CT2[tutctr]] + "<br> <b>TUTORIAL</b>" + "<br> <i>"  + ProfKey[CT2Prof] + "</i>";
+                if(STD2[tutctr]!=''){
+                    cell.innerHTML=SubjectCodes[STD2[tutctr]] + "<br> <b>TUTORIAL</b>" + "<br> <i>"  + ProfKey[STD2Prof] + "</i>";
                     $(cell).css("background-color", "#f0eae6");
                 }
                 tutctr++;
                 i++;
             }
             if(tutdiv == 3){
-                if(CT3[tutctr]!=''){
-                    cell.innerHTML=SubjectCodes[CT3[tutctr]] + "<br> <b>TUTORIAL</b>" + "<br> <i>"  + ProfKey[CT3Prof] + "</i>";
+                if(STD3[tutctr]!=''){
+                    cell.innerHTML=SubjectCodes[STD3[tutctr]] + "<br> <b>TUTORIAL</b>" + "<br> <i>"  + ProfKey[STD3Prof] + "</i>";
                     $(cell).css("background-color", "#f0eae6");
                 }
                 tutctr++;
                 i++;
             }
             if(tutdiv == 4){
-                if(CT4[tutctr]!=''){
-                    cell.innerHTML=SubjectCodes[CT4[tutctr]] + "<br> <b>TUTORIAL</b>" + "<br> <i>"  + ProfKey[CT4Prof] + "</i>";
+                if(STD4[tutctr]!=''){
+                    cell.innerHTML=SubjectCodes[STD4[tutctr]] + "<br> <b>TUTORIAL</b>" + "<br> <i>"  + ProfKey[STD4Prof] + "</i>";
                     $(cell).css("background-color", "#f0eae6");
 
                 }
@@ -206,14 +371,13 @@ if(division=='C') {
         }
         else {
             if(BCEC[i]!='') {
-                cell.innerHTML=SubjectCodes[BCEC[i]] + '<br> <i>' + ProfKey[BCECProf[BCEC[i]]] + '<i>';
+                cell.innerHTML=SubjectCodes[BCEC[i]] + '<br> <i>' + ProfKey[DivProf[BCEC[i]]] + '<i>';
             }
             i = i+1; 
         }
       }
     }
 
-}
 }
 
 function capture() {

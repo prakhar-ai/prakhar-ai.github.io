@@ -19,10 +19,16 @@
   });
       </script>
     <style>
+
+          #formtable,#formtable td{
+            padding:10px;
+            border: 1px solid #cccdcf;
+            border-collapse: collapse;
+        }
         body {
             font-family: Optima, Candara, Calibri, Arial, sans-serif;
         }   
-        table, td {
+        #MyTable, #MyTable td {
           border: 1px solid #cccdcf;
           border-collapse: collapse;
           text-align: center;
@@ -30,8 +36,10 @@
           font-family:'Source Serif Pro', serif;
           
         }
-        tr:nth-child(even) {background-color: #fcfcfc;}
-        td:hover {
+        
+        #MyTable tr:nth-child(even) {background-color: #fcfcfc;}
+
+        #MyTable td:hover {
             background-color: #f5f5f5;
         }
         #days,th{
@@ -50,7 +58,7 @@
                 resize: both;
                 overflow: auto;
                 display: block;
-                height: 500px;
+                height: 490px;
         }
         i {
             font-size: 12px;
@@ -73,15 +81,21 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Source+Serif+Pro&display=swap" rel="stylesheet">
     </head>
     <body>
+      
     <form>
+      <center><h1>Nirma Timetable Generator</h1>
+        <table style = "font-family: Optima, Candara, Calibri, Arial, sans-serif;border: none;text-align:left;padding: 10px;font-size: 16px;" id = 'formtable'>
+        <tr>
+          <td>
         Select your Division:
         <select id="Div">
-          <option value="A" disabled>A</option>
-          <option value="B" disabled>B</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
           <option value="C">C</option>
-          <option value="D" disabled>D</option>
+          <option value="D">D</option>
         </select>
-
+      </td>
+      <td>
         Select your Subdivision:
         <select id="SubDiv">
           <option value="1">1</option>
@@ -89,6 +103,8 @@
           <option value="3">3</option>
           <option value="4">4</option>
         </select>
+      </td>
+      <td>
         Select your Tutorial Subdivision:
         <select id="TutDiv">
           <option value="1">T1</option>
@@ -96,8 +112,10 @@
           <option value="3">T3</option>
           <option value="4">T4</option>
         </select>
-        <br>
-        <br>
+      </td>
+      </tr>
+      <tr>
+      <td colspan="2">
         Open Elective 1 (Mixed Pool):
         <select id="E1">
           <option value="ME">MATLAB for Engineers</option>
@@ -107,7 +125,8 @@
           <option value="IE">Introduction to Econometrics</option>
           <option value="BQM">Basics of Quality Management</option>
         </select>
-
+      </td>
+      <td>
         Subdivision:
         <select id="E1D">
           <option value="1">OE1</option>
@@ -115,8 +134,10 @@
           <option value="3">OE3</option>
           <option value="4">OE4</option>
         </select>
-        <br>
-        <br>
+      </td>
+      </tr>
+      <tr>
+      <td colspan="2">
         Open Elective 2 (Humanities):
         <select id="E2">
           <option value="PD">Personality Development</option>
@@ -126,8 +147,9 @@
           <option value="EV">Ethics and Values</option>
           <option value="GC">Gender Communication</option>
           <option value="MIH">Modern Indian History</option>
-
         </select>
+      </td>
+        <td>
         Subdivision:
         <select id="E2D">
             <option value="0">OE1</option>
@@ -135,10 +157,11 @@
             <option value="2">OE3</option>
             <option value="3">OE4</option>
           </select>
-        <br>
-
+        </td>
+      </tr>
+      </table>
       </form>
-
+      <br>
       <button type="button" onclick="myFunction()">Generate</button>
 
 <br>
@@ -216,6 +239,7 @@
     </tbody>
     </table>
     </div>
+  </center>
     <p>* Doesn't have entries for Lab/Tutorial of Mixed Pool Electives as timings are still unclear</p>
     Editing Options:
     <br><br>
@@ -232,7 +256,7 @@
     <b>Instructions:</b><br>
     1. This table is editable<br>
     2. Select the text to edit and click the B/I button to make it Bold/Italics<br>
-    3. Clicking on the colour buttons changes the colour of any table cell you click to the selected colour<br>
+    3. The colour buttons change the colour of any table cell you click thereafter to the selected colour<br>
     4. Press the X button when you're finished editing colours<br>
     5. Drag the bottom right corner to resize the table<br>
     6. Resize the table until the scrollbar dissappears, then click on Download to save as png
