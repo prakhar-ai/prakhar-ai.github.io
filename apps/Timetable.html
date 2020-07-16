@@ -1,0 +1,196 @@
+<html>
+
+
+    <head>
+    <script src="TimeTable.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.js"></script>
+    <script src="html2canvas.js"></script>
+
+    <style>
+        body {
+            font-family: Optima, Candara, Calibri, Arial, sans-serif;
+        }   
+        table, td {
+          border: 1px solid #cccdcf;
+          border-collapse: collapse;
+          text-align: center;
+          padding: 5px;
+          font-family:'Source Serif Pro', serif;
+          
+        }
+        tr:nth-child(even) {background-color: #fcfcfc;}
+        td:hover {
+            background-color: #f5f5f5;
+        }
+        #days,th{
+            font-family: Optima, Candara, Calibri, Arial, sans-serif;
+            background-color: #edf0f5;
+        }
+        th{    
+            border: 1px solid #cccdcf;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 5px;
+        }
+            div {
+                padding: 20px; 
+                width: 1200px;
+                resize: both;
+                overflow: auto;
+                display: block;
+                height: 500px;
+        }
+        i {
+            font-size: 12px;
+        }
+
+        </style>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Source+Serif+Pro&display=swap" rel="stylesheet">
+    </head>
+    <form>
+        Select your Division:
+        <select id="Div">
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+        </select>
+
+        Select your Subdivision:
+        <select id="SubDiv">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        Select your Tutorial Subdivision:
+        <select id="TutDiv">
+          <option value="1">T1</option>
+          <option value="2">T2</option>
+          <option value="3">T3</option>
+          <option value="4">T4</option>
+        </select>
+        <br>
+        <br>
+        Open Elective 1 (Mixed Pool):
+        <select id="E1">
+          <option value="ME">MATLAB for Engineers</option>
+          <option value="IRM">Introduction to Research Methodology</option>
+          <option value="OB">Organizational Behaviour</option>
+          <option value="DM">Disaster Management</option>
+          <option value="IE">Introduction to Econometrics</option>
+          <option value="BQM">Basics of Quality Management</option>
+        </select>
+
+        Subdivision:
+        <select id="E1D">
+          <option value="1">OE1</option>
+          <option value="2">OE2</option>
+          <option value="3">OE3</option>
+          <option value="4">OE4</option>
+        </select>
+        <br>
+        <br>
+        Open Elective 2 (Humanities):
+        <select id="E2">
+          <option value="PD">Personality Development</option>
+          <option value="IL">Introduction to Literature</option>
+          <option value="MCS">Media, Culture and Society</option>
+          <option value="TW">Technical Writing</option>
+          <option value="EV">Ethics and Values</option>
+          <option value="GC">Gender Communication</option>
+          <option value="MIH">Modern Indian History</option>
+
+        </select>
+        Subdivision:
+        <select id="E2D">
+            <option value="0">OE1</option>
+            <option value="1">OE2</option>
+            <option value="2">OE3</option>
+            <option value="3">OE4</option>
+          </select>
+        <br>
+
+      </form>
+
+      <button type="button" onclick="myFunction()">Generate</button>
+
+<br>
+<div contenteditable="true" id = "imgcap">
+<table id = "MyTable">
+    <thead>
+      <tr>
+        <th></th>
+        <th>9:00 - 10:00</th>
+        <th>10:15 - 11:15</th>
+        <th>11:30 - 12:30</th>
+        <th>1:30 - 2:30</th>
+        <th>2:45 - 3:45</th>
+        <th>4:15 - 5:15</th>
+        <th>5:15 - 6:05</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td  id ='days'><b>MONDAY</b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td colspan="2"></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td  id ='days'><b id ='days'>TUESDAY</b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td colspan="2"></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td  id ='days'><b id ='days'>WEDNESDAY</b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td  id ='days'><b id ='days'>THURSDAY</b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td colspan="2"></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td  id ='days'><b id ='days'>FRIDAY</b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td  id ='days'><b id ='days'>SATURDAY</b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td colspan="2"></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+    </table>
+    </div>
+    <button onclick="document.execCommand( 'bold',false,null);"><b>B</b></button>
+    <button type="button" onclick="capture()">Download</button>
+</html>
