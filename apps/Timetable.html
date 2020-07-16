@@ -44,6 +44,9 @@
         i {
             font-size: 12px;
         }
+        a {
+          color:#141414;
+          }
 
         </style>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Source+Serif+Pro&display=swap" rel="stylesheet">
@@ -51,10 +54,10 @@
     <form>
         Select your Division:
         <select id="Div">
-          <option value="A">A</option>
-          <option value="B">B</option>
+          <option value="A" disabled>A</option>
+          <option value="B" disabled>B</option>
           <option value="C">C</option>
-          <option value="D">D</option>
+          <option value="D" disabled>D</option>
         </select>
 
         Select your Subdivision:
@@ -192,5 +195,12 @@
     </table>
     </div>
     <button onclick="document.execCommand( 'bold',false,null);"><b>B</b></button>
+    <button onclick="document.execCommand( 'italic',false,null);"><b><i>I</i></b></button>
     <button type="button" onclick="capture()">Download</button>
+    <hr>
+    1. This table is editable<br>
+    2. Drag the bottom right corner to resize the table<br>
+    3. Resize the table until the scrollbar dissappears, then click on Download to save as png
+    <hr>
+    <center>© 2020, <a href="https://prakhar-ai.github.io/">Prakhar Jain</a></center>
 </html>
