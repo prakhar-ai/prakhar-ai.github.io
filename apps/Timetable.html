@@ -2,12 +2,22 @@
 
 
     <head>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/prakhar-ai/prakhar-ai.github.io/apps/TimeTable.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/prakhar-ai/prakhar-ai.github.io/apps/html2canvas.js"></script>
-        
+    <script src="TimeTable.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.js"></script>
+    <script src="html2canvas.js"></script>
 
+    <script>
+      var color = 'empty'
+      function changecol(choice) {
+        color = choice;
+      }     
+      $(document).ready(function(){
+        $('td').click(function() {
+              $(this).css("background-color", color);
+    });
+  });
+      </script>
     <style>
         body {
             font-family: Optima, Candara, Calibri, Arial, sans-serif;
@@ -48,6 +58,16 @@
         a {
           color:#141414;
           }
+          #colorbutton {
+            height:25px;
+            width:25px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        p {
+          color: rgb(206, 45, 45);
+          font-weight: bold;
+        }
 
         </style>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Source+Serif+Pro&display=swap" rel="stylesheet">
@@ -122,7 +142,7 @@
       <button type="button" onclick="myFunction()">Generate</button>
 
 <br>
-<div contenteditable="true" id = "imgcap">
+<div contenteditable="true" id = "imgcap" spellcheck="false">
 <table id = "MyTable">
     <thead>
       <tr>
@@ -196,13 +216,26 @@
     </tbody>
     </table>
     </div>
-    <button onclick="document.execCommand( 'bold',false,null);"><b>B</b></button>
-    <button onclick="document.execCommand( 'italic',false,null);"><b><i>I</i></b></button>
+    <p>* Doesn't have entries for Lab/Tutorial of Mixed Pool Electives as timings are still unclear</p>
+    Editing Options:
+    <br><br>
+    <button id="colorbutton" onclick="document.execCommand( 'bold',false,null);"><b>B</b></button>
+    <button id="colorbutton" onclick="document.execCommand( 'italic',false,null);"><i>I</i></button>
+    <button id="colorbutton" onClick=" changecol('#f0f2eb')" style = 'background-color:#f0f2eb'> </button>
+    <button id="colorbutton" onClick=" changecol('#f0eae6')" style = 'background-color:#f0eae6'> </button>
+    <button id="colorbutton" onClick=" changecol('#e6eef0')" style = 'background-color:#e6eef0'> </button>
+    <button id="colorbutton" onClick=" changecol('white')"  style = 'background-color:white'> </button>
+    <button id="colorbutton" onClick=" changecol('empty')"  style = 'background-color:grey'>X</button>
+    <br><br>
     <button type="button" onclick="capture()">Download</button>
     <hr>
+    <b>Instructions:</b><br>
     1. This table is editable<br>
-    2. Drag the bottom right corner to resize the table<br>
-    3. Resize the table until the scrollbar dissappears, then click on Download to save as png
+    2. Select the text to edit and click the B/I button to make it Bold/Italics<br>
+    3. Clicking on the colour buttons changes the colour of any table cell you click to the selected colour<br>
+    4. Press the X button when you're finished editing colours<br>
+    5. Drag the bottom right corner to resize the table<br>
+    6. Resize the table until the scrollbar dissappears, then click on Download to save as png
     <hr>
     <center>© 2020, <a href="https://prakhar-ai.github.io/">Prakhar Jain</a></center>
     </body>
