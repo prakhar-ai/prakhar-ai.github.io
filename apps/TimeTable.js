@@ -104,7 +104,7 @@ DT3Prof = 'DSJ'
 DT4 = ['DAA','','']
 DT4Prof = 'TU'
 
-var PDTut = ['Prof. Anuja Nair','Prof. P.N.Kapil','Prof. H.Kapadia,Prof','Pronoy Bhattacharya']
+var PDTut = ['Prof. Harsh Kapadia','Prof. P.N.Kapil','Prof. Pronoy Bhattacharya','Prof. Anuja Nair']
 var dismanprof = ['Prof. Anant Patel','Prof. Anant Patel','Prof. Alka Shah']
 
 var Electives = 
