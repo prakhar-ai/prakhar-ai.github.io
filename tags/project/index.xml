@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>project on Prakhar Jain</title>
+    <link>http://www.prakharj.me/tags/project/</link>
+    <description>Recent content in project on Prakhar Jain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Prakhar Jain</copyright>
+    <lastBuildDate>Mon, 31 Aug 2020 00:16:17 +0530</lastBuildDate>
+    
+	<atom:link href="http://www.prakharj.me/tags/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Timetable Application</title>
+      <link>http://www.prakharj.me/projects/timetable/</link>
+      <pubDate>Mon, 31 Aug 2020 00:16:17 +0530</pubDate>
+      
+      <guid>http://www.prakharj.me/projects/timetable/</guid>
+      <description>The application creates a personalised Timetable for College based on your Core subjects, Electives and Subdivision specific Labs. This Timetable can be resized and edited. It can then be downloaded.
+The Timetable uses html2canvas to take a screenshot of the Timetable. It uses Javascript and JQuery to add the editing options.
+The application can be viewed here.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,23 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Prakhar Jain</title>
-    <link>/</link>
+    <link>http://www.prakharj.me/</link>
     <description>Recent content on Prakhar Jain</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Jul 2020 12:38:44 +0530</lastBuildDate>
+    <copyright>© Prakhar Jain</copyright>
+    <lastBuildDate>Mon, 31 Aug 2020 00:16:17 +0530</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.prakharj.me/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Web scraping with Lxml and XPath in Python (Part 1)</title>
-      <link>/posts/web-scraping-with-lxml-and-xpaths-in-python-p1/</link>
-      <pubDate>Sat, 11 Jul 2020 12:38:44 +0530</pubDate>
+      <title>My First Post</title>
+      <link>http://www.prakharj.me/posts/my-first-post/</link>
+      <pubDate>Mon, 31 Aug 2020 00:16:17 +0530</pubDate>
       
-      <guid>/posts/web-scraping-with-lxml-and-xpaths-in-python-p1/</guid>
-      <description>Background When choosing to scrape data online with Python, Most beginners tend to go with BeautifulSoup, a popular beginner friendly library for web scraping. Although Beautifulsoup claims to be better at parsing HTML, I hit a roadblock using the soupparser and decided to switch to Lxml to scrape data instead. Lxml can work with BeautifulSoup’s parser and vice versa, but I found using Lxml and XPath to be far more simpler and faster than Beautifulsoup when finding specific elements deep inside the HTML code.</description>
+      <guid>http://www.prakharj.me/posts/my-first-post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Timetable Application</title>
+      <link>http://www.prakharj.me/projects/timetable/</link>
+      <pubDate>Mon, 31 Aug 2020 00:16:17 +0530</pubDate>
+      
+      <guid>http://www.prakharj.me/projects/timetable/</guid>
+      <description>The application creates a personalised Timetable for College based on your Core subjects, Electives and Subdivision specific Labs. This Timetable can be resized and edited. It can then be downloaded.
+The Timetable uses html2canvas to take a screenshot of the Timetable. It uses Javascript and JQuery to add the editing options.
+The application can be viewed here.</description>
+    </item>
+    
+    <item>
+      <title>About Me</title>
+      <link>http://www.prakharj.me/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.prakharj.me/about/</guid>
+      <description>Hi there 👋
+I’m Prakhar Jain and I am passionate Computer Science student who loves to expore new things. You can always find me working on some project or writing about something that interests me. When I&amp;rsquo;m not working, I am mostly found picking up new hobbies and taking courses online.
+With this website I intend to create something that serves both as a personal blog and a portfolio to showcase my work.</description>
     </item>
     
   </channel>

@@ -1,32 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/posts/web-scraping-with-lxml-and-xpaths-in-python-p1/</loc>
-    <lastmod>2020-07-11T12:38:44+05:30</lastmod>
+    <loc>http://www.prakharj.me/posts/my-first-post/</loc>
+    <lastmod>2020-08-31T00:16:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
-    <priority>0</priority>
+    <loc>http://www.prakharj.me/posts/</loc>
+    <lastmod>2020-08-31T00:16:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>/posts/</loc>
-    <lastmod>2020-07-11T12:38:44+05:30</lastmod>
-    <priority>0</priority>
+    <loc>http://www.prakharj.me/</loc>
+    <lastmod>2020-08-31T00:16:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2020-07-11T12:38:44+05:30</lastmod>
-    <priority>0</priority>
+    <loc>http://www.prakharj.me/tags/project/</loc>
+    <lastmod>2020-08-31T00:16:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>/tags/</loc>
-    <priority>0</priority>
+    <loc>http://www.prakharj.me/projects/</loc>
+    <lastmod>2020-08-31T00:16:17+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.prakharj.me/tags/</loc>
+    <lastmod>2020-08-31T00:16:17+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.prakharj.me/tags/time-table/</loc>
+    <lastmod>2020-08-31T00:16:17+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.prakharj.me/projects/timetable/</loc>
+    <lastmod>2020-08-31T00:16:17+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.prakharj.me/tags/untagged/</loc>
+    <lastmod>2020-08-31T00:16:17+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.prakharj.me/about/</loc>
   </url>
   
 </urlset>
