@@ -3,52 +3,60 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://prakhar-ai.github.io/posts/my-first-post/</loc>
+    <loc>https://example.org/</loc>
     <lastmod>2020-08-31T00:16:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://prakhar-ai.github.io/posts/</loc>
+    <loc>https://example.org/posts/my-first-post/</loc>
     <lastmod>2020-08-31T00:16:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://prakhar-ai.github.io/</loc>
+    <loc>https://example.org/posts/</loc>
     <lastmod>2020-08-31T00:16:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://prakhar-ai.github.io/tags/project/</loc>
+    <loc>https://example.org/tags/project/</loc>
     <lastmod>2020-08-31T00:16:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://prakhar-ai.github.io/projects/</loc>
+    <loc>https://example.org/projects/</loc>
     <lastmod>2020-08-31T00:16:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://prakhar-ai.github.io/tags/</loc>
+    <loc>https://example.org/tags/</loc>
     <lastmod>2020-08-31T00:16:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://prakhar-ai.github.io/tags/time-table/</loc>
+    <loc>https://example.org/tags/time-table/</loc>
     <lastmod>2020-08-31T00:16:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://prakhar-ai.github.io/projects/timetable/</loc>
+    <loc>https://example.org/projects/timetable/</loc>
     <lastmod>2020-08-31T00:16:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://prakhar-ai.github.io/tags/untagged/</loc>
+    <loc>https://example.org/tags/untagged/</loc>
     <lastmod>2020-08-31T00:16:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://prakhar-ai.github.io/about/</loc>
+    <loc>https://example.org/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.org/posts/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.org/categories/</loc>
   </url>
   
 </urlset>

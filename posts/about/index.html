@@ -50,7 +50,7 @@
     { 
       "@context": "http://schema.org", 
       "@type": "WebSite", 
-      "url": "https:\/\/example.org\/about\/",
+      "url": "https:\/\/example.org\/posts\/about\/",
       "name": "About Me",
       "author": {
         "@type": "Person",
@@ -85,7 +85,8 @@
       </li>
     
       <li>
-        <a  href="/posts/">posts</a>
+        <a  class="active"
+         href="/posts/">posts</a>
       </li>
     
       <li>
@@ -138,6 +139,11 @@
  <div class="pagination">
   
 
+  
+    <a class="pagination__item" href="https://example.org/posts/my-first-post/">
+      <span class="pagination__label">Next Post</span>
+      <span class="pagination__title" >My First Post</span>
+    </a>
   
 </div>
 

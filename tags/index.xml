@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Prakhar Jain</title>
-    <link>https://prakhar-ai.github.io/tags/</link>
+    <link>https://example.org/tags/</link>
     <description>Recent content in Tags on Prakhar Jain</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© Prakhar Jain</copyright>
+    <copyright>© {year}</copyright>
     <lastBuildDate>Mon, 31 Aug 2020 00:16:17 +0530</lastBuildDate>
     
-	<atom:link href="https://prakhar-ai.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>project</title>
-      <link>https://prakhar-ai.github.io/tags/project/</link>
+      <link>https://example.org/tags/project/</link>
       <pubDate>Mon, 31 Aug 2020 00:16:17 +0530</pubDate>
       
-      <guid>https://prakhar-ai.github.io/tags/project/</guid>
+      <guid>https://example.org/tags/project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>time-table</title>
-      <link>https://prakhar-ai.github.io/tags/time-table/</link>
+      <link>https://example.org/tags/time-table/</link>
       <pubDate>Mon, 31 Aug 2020 00:16:17 +0530</pubDate>
       
-      <guid>https://prakhar-ai.github.io/tags/time-table/</guid>
+      <guid>https://example.org/tags/time-table/</guid>
       <description></description>
     </item>
     
     <item>
       <title>untagged</title>
-      <link>https://prakhar-ai.github.io/tags/untagged/</link>
+      <link>https://example.org/tags/untagged/</link>
       <pubDate>Mon, 31 Aug 2020 00:16:17 +0530</pubDate>
       
-      <guid>https://prakhar-ai.github.io/tags/untagged/</guid>
+      <guid>https://example.org/tags/untagged/</guid>
       <description></description>
     </item>
     
