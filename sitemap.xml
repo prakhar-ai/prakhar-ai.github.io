@@ -33,6 +33,26 @@
   </url>
   
   <url>
+    <loc>https://www.prakharj.me/posts/how-to-scrape-a-website-using-puppeteer-in-node.js/</loc>
+    <lastmod>2020-10-29T00:08:49+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.prakharj.me/tags/node-js/</loc>
+    <lastmod>2020-10-29T00:08:49+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.prakharj.me/tags/puppeteer/</loc>
+    <lastmod>2020-10-29T00:08:49+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.prakharj.me/tags/web-scraping/</loc>
+    <lastmod>2020-10-29T00:08:49+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.prakharj.me/tags/project/</loc>
     <lastmod>2020-08-31T00:16:17+05:30</lastmod>
   </url>
@@ -63,12 +83,7 @@
   </url>
   
   <url>
-    <loc>https://www.prakharj.me/posts/web-scraping-with-lxml-and-xpaths-in-python/</loc>
-    <lastmod>2020-07-11T00:10:56+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.prakharj.me/tags/web-scraping/</loc>
+    <loc>https://www.prakharj.me/posts/web-scraping-with-lxml-and-xpaths-in-python-copy/</loc>
     <lastmod>2020-07-11T00:10:56+05:30</lastmod>
   </url>
   

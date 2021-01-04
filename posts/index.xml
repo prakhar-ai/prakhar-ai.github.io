@@ -23,11 +23,23 @@ Procedure using Standard OCR I printed a page of a sample registration form, wro
     </item>
     
     <item>
+      <title>How to Scrape a Website Using Puppeteer in Node.js</title>
+      <link>https://www.prakharj.me/posts/how-to-scrape-a-website-using-puppeteer-in-node.js/</link>
+      <pubDate>Thu, 29 Oct 2020 00:08:49 +0530</pubDate>
+      
+      <guid>https://www.prakharj.me/posts/how-to-scrape-a-website-using-puppeteer-in-node.js/</guid>
+      <description>Puppeteer is a Node.js library which provides a high-level API to control headless Chrome or Chromium over the DevTools Protocol. It allows automating, testing and scraping of web pages over a headless/headful browser.
+Installing Puppeteer: To use puppeteer, you must have Node.js installed. Then, Puppeteer can be installed in the command line using the npm package manager.
+npm install puppeteer
+Using Puppeteer: The Puppeteer library can be imported in your script using:</description>
+    </item>
+    
+    <item>
       <title>Web Scraping using lxml and XPath in Python</title>
-      <link>https://www.prakharj.me/posts/web-scraping-with-lxml-and-xpaths-in-python/</link>
+      <link>https://www.prakharj.me/posts/web-scraping-with-lxml-and-xpaths-in-python-copy/</link>
       <pubDate>Sat, 11 Jul 2020 00:10:56 +0530</pubDate>
       
-      <guid>https://www.prakharj.me/posts/web-scraping-with-lxml-and-xpaths-in-python/</guid>
+      <guid>https://www.prakharj.me/posts/web-scraping-with-lxml-and-xpaths-in-python-copy/</guid>
       <description>In this article, we will discuss the lxml python library to scrape data from a webpage, which is built on top of the libxml2 XML parsing library written in C. When compared to other python web scraping libraries like BeautifulSoup and Selenium, the lxml package gives an advantage in terms of performance. Reading and writing large XML files takes an indiscernible amount of time, making data processing easier &amp;amp; much faster.</description>
     </item>
     

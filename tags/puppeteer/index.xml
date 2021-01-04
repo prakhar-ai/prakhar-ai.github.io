@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Web-Scraping on Prakhar Jain</title>
-    <link>https://www.prakharj.me/tags/web-scraping/</link>
-    <description>Recent content in Web-Scraping on Prakhar Jain</description>
+    <title>puppeteer on Prakhar Jain</title>
+    <link>https://www.prakharj.me/tags/puppeteer/</link>
+    <description>Recent content in puppeteer on Prakhar Jain</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
     <lastBuildDate>Thu, 29 Oct 2020 00:08:49 +0530</lastBuildDate>
     
-	<atom:link href="https://www.prakharj.me/tags/web-scraping/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.prakharj.me/tags/puppeteer/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -22,15 +22,6 @@
 Installing Puppeteer: To use puppeteer, you must have Node.js installed. Then, Puppeteer can be installed in the command line using the npm package manager.
 npm install puppeteer
 Using Puppeteer: The Puppeteer library can be imported in your script using:</description>
-    </item>
-    
-    <item>
-      <title>Web Scraping using lxml and XPath in Python</title>
-      <link>https://www.prakharj.me/posts/web-scraping-with-lxml-and-xpaths-in-python-copy/</link>
-      <pubDate>Sat, 11 Jul 2020 00:10:56 +0530</pubDate>
-      
-      <guid>https://www.prakharj.me/posts/web-scraping-with-lxml-and-xpaths-in-python-copy/</guid>
-      <description>In this article, we will discuss the lxml python library to scrape data from a webpage, which is built on top of the libxml2 XML parsing library written in C. When compared to other python web scraping libraries like BeautifulSoup and Selenium, the lxml package gives an advantage in terms of performance. Reading and writing large XML files takes an indiscernible amount of time, making data processing easier &amp;amp; much faster.</description>
     </item>
     
   </channel>

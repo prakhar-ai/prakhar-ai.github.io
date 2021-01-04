@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <title>How to Scrape a Website Using Puppeteer in Node.js | Prakhar Jain</title>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="How to Scrape a Website Using Puppeteer in Node.js" />
+  <meta name="twitter:description" content=""/>
+  <meta name="twitter:site" content="https://twitter.com/_PrakharJ" />
+  <meta name="twitter:creator" content="https://twitter.com/_PrakharJ" />
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+
+  
+  
+    
+ 
+  
+  
+  
+  
+  
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/post.min.b60e0932fe1c50c3d7c5b4f83ee9e4592363654d0f2abf05bbd0678d5b8a214c.css" integrity="sha256-tg4JMv4cUMPXxbT4PunkWSNjZU0PKr8Fu9BnjVuKIUw="/>
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
+  
+  
+   
+   
+    
+
+<script type="application/ld+json">
+  
+    { 
+      "@context": "http://schema.org", 
+      "@type": "WebSite", 
+      "url": "https:\/\/www.prakharj.me\/posts\/how-to-scrape-a-website-using-puppeteer-in-node.js\/",
+      "name": "How to Scrape a Website Using Puppeteer in Node.js",
+      "author": {
+        "@type": "Person",
+        "name": ""
+      },
+      "description": ""
+    }
+  
+  </script>
+</head>
+
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+ 
+
+  <nav class="nav" id="navigation">
+  <ul class="nav__list">
+    
+    
+      <li>
+        <a  href="/about">about</a>
+      </li>
+    
+      <li>
+        <a  href="/">home</a>
+      </li>
+    
+      <li>
+        <a  class="active"
+         href="/posts/">posts</a>
+      </li>
+    
+      <li>
+        <a  href="/projects">projects</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+  <main>
+    
+    
+
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title">How to Scrape a Website Using Puppeteer in Node.js</h1>
+            <time datetime="2020-10-29 00:08:49 &#43;0530 IST" class="post__date">Oct 29 2020</time> 
+          </header>
+          <article class="post__content">
+              
+<p><img src="/puppeteer-image.jpg" alt="Puppeteer Image"></p>
+<p>Puppeteer is a Node.js library which provides a high-level API to control headless Chrome or Chromium over the DevTools Protocol. It allows automating, testing and scraping of web pages over a headless/headful browser.</p>
+<p><strong>Installing Puppeteer:</strong>
+To use puppeteer, you must have Node.js installed. Then, Puppeteer can be installed in the command line using the npm package manager.</p>
+<p><code>npm install puppeteer</code></p>
+<p><strong>Using Puppeteer</strong>: The Puppeteer library can be imported in your script using:</p>
+<p><code>const puppeteer = require('puppeteer');</code></p>
+<p>It is important to remember that Puppeteer is a promise-based library which performs asynchronous calls to the headless Chrome instance. Therefore, we wrap it in an async wrapper. This means that the code is executed immediately.</p>
+<p>Here is a simple example to take a screenshot of a page:</p>
+<pre><code class="language-.language-javascript">import Puppeteer 
+const puppeteer = require('puppeteer'); 
+  
+(async () =&gt; { 
+    const browser = await puppeteer.launch(); 
+      
+    // Open new page in headless browser 
+    const page = await browser.newPage();  
+      
+    // To visit page in browser 
+    await page.goto('https://scrapethissite.com'); 
+      
+    // Save Screenshot at Path 
+    await page.screenshot({path: 'screenshot.png'}); 
+    
+      // Close our browser instance 
+    await browser.close(); 
+  })();
+</code></pre>
+<p><strong>Running your Code</strong>: Save your code as a JavaScript file and run it in the command line using the following command-</p>
+<p><code>node filename.js</code></p>
+<p><strong>Example</strong>: The following code returns an object with the NHL Hockey Team Name and Wins for that year,</p>
+<pre><code class="language-.language-javascript">const puppeteer = require('puppeteer'); 
+  
+(async () =&gt; { 
+    const browser = await puppeteer.launch(); 
+    const page = await browser.newPage(); 
+    await page.goto('https://scrapethissite.com/pages/forms/'); 
+  
+    const textsArray = await page.evaluate( 
+        () =&gt; [...document.querySelectorAll( 
+            '#hockey &gt; div &gt; table &gt; tbody &gt; tr &gt; td.name')] 
+            .map(elem =&gt; elem.innerText) 
+    ); 
+    const WinArray = await page.evaluate( 
+        () =&gt; [...document.querySelectorAll( 
+            '#hockey &gt; div &gt; table &gt; tbody &gt; tr &gt; td.wins')] 
+            .map(elem =&gt; elem.innerText) 
+    ); 
+    var result = {}; 
+    textsArray.forEach((textsArray, i) =&gt;  
+        result[textsArray] = WinArray[i]); 
+    console.log(result); 
+    await browser.close(); 
+})();
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>{ ‘Boston Bruins’: ’36’, ‘Buffalo Sabres’: ’31’, ‘Calgary Flames’: ’31’, ‘Chicago Blackhawks’: ’36’,
+‘Detroit Red Wings’: ’34’, ‘Edmonton Oilers’: ’37’, ‘Hartford Whalers’: ’31’, ‘Los Angeles Kings’: ’46’,
+‘Minnesota North Stars’: ’27’, ‘Montreal Canadiens’: ’39’, ‘New Jersey Devils’: ’32’, ‘New York Islanders’: ’25’,
+‘New York Rangers’: ’36’, ‘Philadelphia Flyers’: ’33’, ‘Pittsburgh Penguins’: ’41’, ‘Quebec Nordiques’: ’16’,
+‘St. Louis Blues’: ’47’, ‘Toronto Maple Leafs’: ’23’, ‘Vancouver Canucks’: ’28’, ‘Washington Capitals’: ’37’,
+‘Winnipeg Jets’: ’26’}
+</code></pre>
+
+
+              
+          </article>
+          
+
+<ul class="tags__list">
+    
+    <li class="tag__item">
+        <a class="tag__link" href="https://www.prakharj.me/tags/web-scraping/">web-scraping</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://www.prakharj.me/tags/puppeteer/">puppeteer</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://www.prakharj.me/tags/node-js/">node-js</a>
+    </li></ul>
+
+ <div class="pagination">
+  
+    <a class="pagination__item" href="https://www.prakharj.me/posts/web-scraping-with-lxml-and-xpaths-in-python-copy/">
+        <span class="pagination__label">Previous Post</span>
+        <span class="pagination__title">Web Scraping using lxml and XPath in Python</span>
+    </a>
+  
+
+  
+    <a class="pagination__item" href="https://www.prakharj.me/posts/using-computer-vision-to-ocr-registration-forms-copy/">
+      <span class="pagination__label">Next Post</span>
+      <span class="pagination__title" >Using Computer Vision to OCR Registration Forms</span>
+    </a>
+  
+</div>
+
+          
+          <footer class="post__footer">
+            
+
+
+<div class="social-icons">
+  
+     
+    
+      <a class="social-icons__link" rel="me" title="Twitter"
+         href="https://twitter.com/_PrakharJ"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('https://www.prakharj.me/svg/twitter.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__link" rel="me" title="GitHub"
+         href="https://github.com/prakhar-ai"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('https://www.prakharj.me/svg/github.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__link" rel="me" title="Email"
+         href="mailto:prakharalt@gmail.com"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('https://www.prakharj.me/svg/email.svg')"></div>
+      </a>
+    
+     
+</div>
+
+            <p>© 2021</p>
+          </footer>
+          </div>
+      </div>
+      
+    </div>
+    
+
+  </main>
+
+   
+
+  
+  <script src="/js/index.min.49e4d8a384357d9b445b87371863419937ede9fa77737522ffb633073aebfa44.js" integrity="sha256-SeTYo4Q1fZtEW4c3GGNBmTft6fp3c3Ui/7YzBzrr&#43;kQ=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+
+  
+
+
+</body>
+
+</html>

@@ -14,10 +14,10 @@
     
     <item>
       <title>Web Scraping using lxml and XPath in Python</title>
-      <link>https://www.prakharj.me/posts/web-scraping-with-lxml-and-xpaths-in-python/</link>
+      <link>https://www.prakharj.me/posts/web-scraping-with-lxml-and-xpaths-in-python-copy/</link>
       <pubDate>Sat, 11 Jul 2020 00:10:56 +0530</pubDate>
       
-      <guid>https://www.prakharj.me/posts/web-scraping-with-lxml-and-xpaths-in-python/</guid>
+      <guid>https://www.prakharj.me/posts/web-scraping-with-lxml-and-xpaths-in-python-copy/</guid>
       <description>In this article, we will discuss the lxml python library to scrape data from a webpage, which is built on top of the libxml2 XML parsing library written in C. When compared to other python web scraping libraries like BeautifulSoup and Selenium, the lxml package gives an advantage in terms of performance. Reading and writing large XML files takes an indiscernible amount of time, making data processing easier &amp;amp; much faster.</description>
     </item>
     
