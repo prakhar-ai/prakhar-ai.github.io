@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Mon, 31 Aug 2020 00:16:17 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 04 Jan 2021 21:11:10 +0530</lastBuildDate>
     
 	<atom:link href="https://www.prakharj.me/tags/project/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nirma Previous Year Papers</title>
+      <link>https://www.prakharj.me/projects/previous-year-papers-project/</link>
+      <pubDate>Mon, 04 Jan 2021 21:11:10 +0530</pubDate>
+      
+      <guid>https://www.prakharj.me/projects/previous-year-papers-project/</guid>
+      <description>The Project use Datatablesfor smart searching. Smart searching performs partial and out of order word matching that is performed globally across all searchable columns. This allows for queries like &amp;ldquo;machine learning 2019&amp;rdquo; to bring up the specific paper. You can read more about smart search here.
+The Data present here is sourced from the official Nirma Library Archive.
+Examples  &amp;ldquo;machine learning may 2018&amp;rdquo; &amp;ldquo;cs302&amp;rdquo; &amp;ldquo;database manage d to d&amp;rdquo;  Inspiration This project is inspired by the MFQPproject.</description>
+    </item>
     
     <item>
       <title>Timetable Application</title>

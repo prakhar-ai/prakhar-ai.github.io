@@ -4,7 +4,33 @@
   
   <url>
     <loc>https://www.prakharj.me/</loc>
-    <lastmod>2021-01-04T00:10:56+05:30</lastmod>
+    <lastmod>2021-01-04T21:11:10+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.prakharj.me/projects/</loc>
+    <lastmod>2021-01-04T21:11:10+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.prakharj.me/projects/previous-year-papers-project/</loc>
+    <lastmod>2021-01-04T21:11:10+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.prakharj.me/tags/previous-year-papers/</loc>
+    <lastmod>2021-01-04T21:11:10+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.prakharj.me/tags/project/</loc>
+    <lastmod>2021-01-04T21:11:10+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.prakharj.me/tags/</loc>
+    <lastmod>2021-01-04T21:11:10+05:30</lastmod>
   </url>
   
   <url>
@@ -20,11 +46,6 @@
   
   <url>
     <loc>https://www.prakharj.me/tags/ocr/</loc>
-    <lastmod>2021-01-04T00:10:56+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.prakharj.me/tags/</loc>
     <lastmod>2021-01-04T00:10:56+05:30</lastmod>
   </url>
   
@@ -54,16 +75,6 @@
   </url>
   
   <url>
-    <loc>https://www.prakharj.me/tags/project/</loc>
-    <lastmod>2020-08-31T00:16:17+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.prakharj.me/projects/</loc>
-    <lastmod>2020-08-31T00:16:17+05:30</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.prakharj.me/tags/time-table/</loc>
     <lastmod>2020-08-31T00:16:17+05:30</lastmod>
   </url>
@@ -86,11 +97,6 @@
   <url>
     <loc>https://www.prakharj.me/posts/web-scraping-with-lxml-and-xpaths-in-python-copy/</loc>
     <lastmod>2020-07-11T00:10:56+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.prakharj.me/projects/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
