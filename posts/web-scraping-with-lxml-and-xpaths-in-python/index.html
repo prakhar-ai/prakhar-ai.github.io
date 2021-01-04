@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <title>Web Scraping using lxml and XPath in Python | Prakhar Jain</title>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Web Scraping using lxml and XPath in Python" />
+  <meta name="twitter:description" content=""/>
+  <meta name="twitter:site" content="https://twitter.com/_PrakharJ" />
+  <meta name="twitter:creator" content="https://twitter.com/_PrakharJ" />
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+
+  
+  
+    
+ 
+  
+  
+  
+  
+  
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/post.min.b60e0932fe1c50c3d7c5b4f83ee9e4592363654d0f2abf05bbd0678d5b8a214c.css" integrity="sha256-tg4JMv4cUMPXxbT4PunkWSNjZU0PKr8Fu9BnjVuKIUw="/>
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
+  
+  
+   
+   
+    
+
+<script type="application/ld+json">
+  
+    { 
+      "@context": "http://schema.org", 
+      "@type": "WebSite", 
+      "url": "https:\/\/www.prakharj.me\/posts\/web-scraping-with-lxml-and-xpaths-in-python\/",
+      "name": "Web Scraping using lxml and XPath in Python",
+      "author": {
+        "@type": "Person",
+        "name": ""
+      },
+      "description": ""
+    }
+  
+  </script>
+</head>
+
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+ 
+
+  <nav class="nav" id="navigation">
+  <ul class="nav__list">
+    
+    
+      <li>
+        <a  href="/about">about</a>
+      </li>
+    
+      <li>
+        <a  href="/">home</a>
+      </li>
+    
+      <li>
+        <a  class="active"
+         href="/posts/">posts</a>
+      </li>
+    
+      <li>
+        <a  href="/projects">projects</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+  <main>
+    
+    
+
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title">Web Scraping using lxml and XPath in Python</h1>
+            <time datetime="2020-07-11 00:10:56 &#43;0530 IST" class="post__date">Jul 11 2020</time> 
+          </header>
+          <article class="post__content">
+              
+<p>In this article, we will discuss the lxml python library to scrape data from a webpage, which is built on top of the libxml2 XML parsing library written in C. When compared to other python web scraping libraries like BeautifulSoup and Selenium, the lxml package gives an advantage in terms of performance. Reading and writing large XML files takes an indiscernible amount of time, making data processing easier &amp; much faster.</p>
+<p>We will be using the lxml library for Web Scraping and the requests library for making HTTP requests in Python. These can be installed in the command line using the pip package installer for Python.</p>
+<p>Getting data from an element on the webpage using lxml requires the usage of Xpaths.</p>
+<h2 id="introduction-to-xpaths">Introduction to XPaths<a class="anchor" href="#introduction-to-xpaths">#</a></h2>
+<p>Xpaths work very much like a traditional file system</p>
+<p><img src="/tree1.svg" alt="File System Tree"></p>
+<p>To access file 1,</p>
+<pre><code>C:/File1
+</code></pre>
+<p>Similarly, To access file 2,</p>
+<pre><code>C:/Documents/User1/File2
+</code></pre>
+<p>Now consider a simple web page,</p>
+<pre><code class="language-.language-markup">&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;My page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Welcome to my page&lt;h2&gt;
+       &lt;a href=&quot;www.example.com&quot;&gt;page&lt;/a&gt;
+        &lt;p&gt;This is the first paragraph&lt;/p&gt;
+        &lt;h2&gt;Hello World&lt;/h2&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>This can be represented as an XML Tree as follows,</p>
+<p><img src="/tree2.svg" alt="File System Tree"></p>
+<p>For getting the text inside the p tag,</p>
+<pre><code>XPath : html/body/p/text()
+</code></pre>
+<p><code>Result : This is the first paragraph</code></p>
+<p>For getting an value inside the href attribute in the a tag,</p>
+<pre><code>XPath : html/body/a/@href
+</code></pre>
+<p><code>Result: www.example.com</code></p>
+<p>For getting the value inside the second h2 tag,</p>
+<pre><code>XPath : html/body/h2[2]/text()
+</code></pre>
+<p><code>Result: Hello World</code></p>
+<p>To find the XPath for a particular element on a page:</p>
+<ol>
+<li>Right-click the element in the page and click on Inspect.</li>
+<li>Right click on the element in the Elements Tab.</li>
+<li>Click on copy XPath.</li>
+</ol>
+<h2 id="using-lxml">Using LXML<a class="anchor" href="#using-lxml">#</a></h2>
+<p>Step-by-step Approach:</p>
+<ol>
+<li>We will use <code>requests.get</code> to retrieve the web page with our data.</li>
+<li>We use <code>html.fromstring</code> to parse the content using the lxml parser.</li>
+<li>We create the correct XPath query and use the lxml xpath function to get the required element.</li>
+</ol>
+<p>Below is a program based on the above approach which uses this <a href="http://econpy.pythonanywhere.com/ex/001.html" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>URL</a>
+</p>
+<pre><code class="language-.language-python"># Import required modules 
+from lxml import html 
+import requests 
+  
+# Request the page 
+page = requests.get('http://econpy.pythonanywhere.com/ex/001.html') 
+  
+# Parsing the page 
+# (We need to use page.content rather than  
+# page.text because html.fromstring implicitly 
+# expects bytes as input.) 
+tree = html.fromstring(page.content)   
+  
+# Get element using XPath 
+buyers = tree.xpath('//div[@title=&quot;buyer-name&quot;]/text()') 
+print(buyers)
+</code></pre>
+
+
+              
+          </article>
+          
+
+<ul class="tags__list">
+    
+    <li class="tag__item">
+        <a class="tag__link" href="https://www.prakharj.me/tags/web-scraping/">web-scraping</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://www.prakharj.me/tags/lxml/">lxml</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://www.prakharj.me/tags/python/">python</a>
+    </li></ul>
+
+ <div class="pagination">
+  
+
+  
+    <a class="pagination__item" href="https://www.prakharj.me/posts/using-computer-vision-to-ocr-registration-forms-copy/">
+      <span class="pagination__label">Next Post</span>
+      <span class="pagination__title" >Using Computer Vision to OCR Registration Forms</span>
+    </a>
+  
+</div>
+
+          
+          <footer class="post__footer">
+            
+
+
+<div class="social-icons">
+  
+     
+    
+      <a class="social-icons__link" rel="me" title="Twitter"
+         href="https://twitter.com/_PrakharJ"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('https://www.prakharj.me/svg/twitter.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__link" rel="me" title="GitHub"
+         href="https://github.com/prakhar-ai"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('https://www.prakharj.me/svg/github.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__link" rel="me" title="Email"
+         href="mailto:prakharalt@gmail.com"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('https://www.prakharj.me/svg/email.svg')"></div>
+      </a>
+    
+     
+</div>
+
+            <p>© 2021</p>
+          </footer>
+          </div>
+      </div>
+      
+    </div>
+    
+
+  </main>
+
+   
+
+  
+  <script src="/js/index.min.49e4d8a384357d9b445b87371863419937ede9fa77737522ffb633073aebfa44.js" integrity="sha256-SeTYo4Q1fZtEW4c3GGNBmTft6fp3c3Ui/7YzBzrr&#43;kQ=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+
+  
+
+
+</body>
+
+</html>

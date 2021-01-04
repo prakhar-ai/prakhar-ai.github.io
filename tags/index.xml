@@ -2,49 +2,76 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Prakhar Jain</title>
-    <link>https://example.org/tags/</link>
+    <link>https://www.prakharj.me/tags/</link>
     <description>Recent content in Tags on Prakhar Jain</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
     <lastBuildDate>Mon, 04 Jan 2021 00:10:56 +0530</lastBuildDate>
     
-	<atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.prakharj.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Computer-Vision</title>
-      <link>https://example.org/tags/computer-vision/</link>
+      <link>https://www.prakharj.me/tags/computer-vision/</link>
       <pubDate>Mon, 04 Jan 2021 00:10:56 +0530</pubDate>
       
-      <guid>https://example.org/tags/computer-vision/</guid>
+      <guid>https://www.prakharj.me/tags/computer-vision/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OCR</title>
-      <link>https://example.org/tags/ocr/</link>
+      <link>https://www.prakharj.me/tags/ocr/</link>
       <pubDate>Mon, 04 Jan 2021 00:10:56 +0530</pubDate>
       
-      <guid>https://example.org/tags/ocr/</guid>
+      <guid>https://www.prakharj.me/tags/ocr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>project</title>
-      <link>https://example.org/tags/project/</link>
+      <link>https://www.prakharj.me/tags/project/</link>
       <pubDate>Mon, 31 Aug 2020 00:16:17 +0530</pubDate>
       
-      <guid>https://example.org/tags/project/</guid>
+      <guid>https://www.prakharj.me/tags/project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>time-table</title>
-      <link>https://example.org/tags/time-table/</link>
+      <link>https://www.prakharj.me/tags/time-table/</link>
       <pubDate>Mon, 31 Aug 2020 00:16:17 +0530</pubDate>
       
-      <guid>https://example.org/tags/time-table/</guid>
+      <guid>https://www.prakharj.me/tags/time-table/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lxml</title>
+      <link>https://www.prakharj.me/tags/lxml/</link>
+      <pubDate>Sat, 11 Jul 2020 00:10:56 +0530</pubDate>
+      
+      <guid>https://www.prakharj.me/tags/lxml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://www.prakharj.me/tags/python/</link>
+      <pubDate>Sat, 11 Jul 2020 00:10:56 +0530</pubDate>
+      
+      <guid>https://www.prakharj.me/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web-Scraping</title>
+      <link>https://www.prakharj.me/tags/web-scraping/</link>
+      <pubDate>Sat, 11 Jul 2020 00:10:56 +0530</pubDate>
+      
+      <guid>https://www.prakharj.me/tags/web-scraping/</guid>
       <description></description>
     </item>
     

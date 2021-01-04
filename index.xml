@@ -2,54 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Prakhar Jain</title>
-    <link>https://example.org/</link>
+    <link>https://www.prakharj.me/</link>
     <description>Recent content on Prakhar Jain</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
     <lastBuildDate>Mon, 04 Jan 2021 00:10:56 +0530</lastBuildDate>
     
-	<atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.prakharj.me/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Using Computer Vision to OCR Registration Forms</title>
-      <link>https://example.org/posts/using-computer-vision-to-ocr-registration-forms/</link>
+      <link>https://www.prakharj.me/posts/using-computer-vision-to-ocr-registration-forms-copy/</link>
       <pubDate>Mon, 04 Jan 2021 00:10:56 +0530</pubDate>
       
-      <guid>https://example.org/posts/using-computer-vision-to-ocr-registration-forms/</guid>
+      <guid>https://www.prakharj.me/posts/using-computer-vision-to-ocr-registration-forms-copy/</guid>
       <description>Given a registration form such as this one, normal OCR techniques do not tend to work, since libraries like Tesseract and EasyOCR cannot decipher checkboxes and other box fields for written texts. Since these forms have boxes where letters need to be written, a better approach would be to first try to detect checkboxes and other boxed fields and then convert that handwritten text based on its location.
 Procedure using Standard OCR I printed a page of a sample registration form, wrote fake details and scanned it.</description>
     </item>
     
     <item>
       <title>Timetable Application</title>
-      <link>https://example.org/projects/timetable/</link>
+      <link>https://www.prakharj.me/projects/timetable/</link>
       <pubDate>Mon, 31 Aug 2020 00:16:17 +0530</pubDate>
       
-      <guid>https://example.org/projects/timetable/</guid>
+      <guid>https://www.prakharj.me/projects/timetable/</guid>
       <description>The application creates a personalised Timetable for College based on your Core subjects, Electives and Subdivision specific Labs. This Timetable can be resized and edited. It can then be downloaded.
 The Timetable uses html2canvasto take a screenshot of the Timetable. It uses Javascript and JQuery to add the editing options.
 The application can be viewed here.</description>
     </item>
     
     <item>
-      <title>About Me</title>
-      <link>https://example.org/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Web Scraping using lxml and XPath in Python</title>
+      <link>https://www.prakharj.me/posts/web-scraping-with-lxml-and-xpaths-in-python/</link>
+      <pubDate>Sat, 11 Jul 2020 00:10:56 +0530</pubDate>
       
-      <guid>https://example.org/about/</guid>
-      <description>Hi there 👋
-I’m Prakhar Jain, a passionate Computer Science student who loves to explore new things. You can always find me working on some projector writingabout something that interests me. When I&amp;rsquo;m not working, I am mostly found picking up new hobbies and taking courses online.
-With this website I intend to create something that serves both as a personal blog and a portfolio to showcase my work.</description>
+      <guid>https://www.prakharj.me/posts/web-scraping-with-lxml-and-xpaths-in-python/</guid>
+      <description>In this article, we will discuss the lxml python library to scrape data from a webpage, which is built on top of the libxml2 XML parsing library written in C. When compared to other python web scraping libraries like BeautifulSoup and Selenium, the lxml package gives an advantage in terms of performance. Reading and writing large XML files takes an indiscernible amount of time, making data processing easier &amp;amp; much faster.</description>
     </item>
     
     <item>
       <title>About Me</title>
-      <link>https://example.org/posts/about/</link>
+      <link>https://www.prakharj.me/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://example.org/posts/about/</guid>
+      <guid>https://www.prakharj.me/about/</guid>
       <description>Hi there 👋
 I’m Prakhar Jain, a passionate Computer Science student who loves to explore new things. You can always find me working on some projector writingabout something that interests me. When I&amp;rsquo;m not working, I am mostly found picking up new hobbies and taking courses online.
 With this website I intend to create something that serves both as a personal blog and a portfolio to showcase my work.</description>

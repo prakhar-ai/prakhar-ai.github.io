@@ -3,65 +3,81 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://example.org/</loc>
+    <loc>https://www.prakharj.me/</loc>
     <lastmod>2021-01-04T00:10:56+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/tags/computer-vision/</loc>
+    <loc>https://www.prakharj.me/tags/computer-vision/</loc>
     <lastmod>2021-01-04T00:10:56+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/tags/ocr/</loc>
+    <loc>https://www.prakharj.me/tags/ocr/</loc>
     <lastmod>2021-01-04T00:10:56+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/posts/</loc>
+    <loc>https://www.prakharj.me/posts/</loc>
     <lastmod>2021-01-04T00:10:56+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/tags/</loc>
+    <loc>https://www.prakharj.me/tags/</loc>
     <lastmod>2021-01-04T00:10:56+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/posts/using-computer-vision-to-ocr-registration-forms/</loc>
+    <loc>https://www.prakharj.me/posts/using-computer-vision-to-ocr-registration-forms-copy/</loc>
     <lastmod>2021-01-04T00:10:56+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/tags/project/</loc>
+    <loc>https://www.prakharj.me/tags/project/</loc>
     <lastmod>2020-08-31T00:16:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/projects/</loc>
+    <loc>https://www.prakharj.me/projects/</loc>
     <lastmod>2020-08-31T00:16:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/tags/time-table/</loc>
+    <loc>https://www.prakharj.me/tags/time-table/</loc>
     <lastmod>2020-08-31T00:16:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/projects/timetable/</loc>
+    <loc>https://www.prakharj.me/projects/timetable/</loc>
     <lastmod>2020-08-31T00:16:17+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/about/</loc>
+    <loc>https://www.prakharj.me/tags/lxml/</loc>
+    <lastmod>2020-07-11T00:10:56+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/posts/about/</loc>
+    <loc>https://www.prakharj.me/tags/python/</loc>
+    <lastmod>2020-07-11T00:10:56+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/categories/</loc>
+    <loc>https://www.prakharj.me/posts/web-scraping-with-lxml-and-xpaths-in-python/</loc>
+    <lastmod>2020-07-11T00:10:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.prakharj.me/tags/web-scraping/</loc>
+    <lastmod>2020-07-11T00:10:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.prakharj.me/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.prakharj.me/categories/</loc>
   </url>
   
 </urlset>
