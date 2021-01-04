@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
-    <lastBuildDate>Mon, 31 Aug 2020 00:16:17 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 04 Jan 2021 00:10:56 +0530</lastBuildDate>
     
 	<atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Computer-Vision</title>
+      <link>https://example.org/tags/computer-vision/</link>
+      <pubDate>Mon, 04 Jan 2021 00:10:56 +0530</pubDate>
+      
+      <guid>https://example.org/tags/computer-vision/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OCR</title>
+      <link>https://example.org/tags/ocr/</link>
+      <pubDate>Mon, 04 Jan 2021 00:10:56 +0530</pubDate>
+      
+      <guid>https://example.org/tags/ocr/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>project</title>
@@ -27,15 +45,6 @@
       <pubDate>Mon, 31 Aug 2020 00:16:17 +0530</pubDate>
       
       <guid>https://example.org/tags/time-table/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>untagged</title>
-      <link>https://example.org/tags/untagged/</link>
-      <pubDate>Mon, 31 Aug 2020 00:16:17 +0530</pubDate>
-      
-      <guid>https://example.org/tags/untagged/</guid>
       <description></description>
     </item>
     

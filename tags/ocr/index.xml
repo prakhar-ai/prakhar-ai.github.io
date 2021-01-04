@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OCR on Prakhar Jain</title>
+    <link>https://example.org/tags/ocr/</link>
+    <description>Recent content in OCR on Prakhar Jain</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© {year}</copyright>
+    <lastBuildDate>Mon, 04 Jan 2021 00:10:56 +0530</lastBuildDate>
+    
+	<atom:link href="https://example.org/tags/ocr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using Computer Vision to OCR Registration Forms</title>
+      <link>https://example.org/posts/using-computer-vision-to-ocr-registration-forms/</link>
+      <pubDate>Mon, 04 Jan 2021 00:10:56 +0530</pubDate>
+      
+      <guid>https://example.org/posts/using-computer-vision-to-ocr-registration-forms/</guid>
+      <description>Given a registration form such as this one, normal OCR techniques do not tend to work, since libraries like Tesseract and EasyOCR cannot decipher checkboxes and other box fields for written texts. Since these forms have boxes where letters need to be written, a better approach would be to first try to detect checkboxes and other boxed fields and then convert that handwritten text based on its location.
+Procedure using Standard OCR I printed a page of a sample registration form, wrote fake details and scanned it.</description>
+    </item>
+    
+  </channel>
+</rss>
