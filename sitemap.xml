@@ -8,17 +8,18 @@
   </url>
   
   <url>
+    <loc>https://www.prakharj.me/posts/</loc>
+    <lastmod>2021-01-04T00:10:56+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.prakharj.me/tags/computer-vision/</loc>
     <lastmod>2021-01-04T00:10:56+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://www.prakharj.me/tags/ocr/</loc>
-    <lastmod>2021-01-04T00:10:56+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.prakharj.me/posts/</loc>
     <lastmod>2021-01-04T00:10:56+05:30</lastmod>
   </url>
   
@@ -85,6 +86,11 @@
   <url>
     <loc>https://www.prakharj.me/posts/web-scraping-with-lxml-and-xpaths-in-python-copy/</loc>
     <lastmod>2020-07-11T00:10:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.prakharj.me/projects/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
