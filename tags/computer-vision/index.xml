@@ -14,10 +14,10 @@
     
     <item>
       <title>Using Computer Vision to OCR Registration Forms</title>
-      <link>https://www.prakharj.me/posts/using-computer-vision-to-ocr-registration-forms-copy/</link>
+      <link>https://www.prakharj.me/projects/using-computer-vision-to-ocr-registration-forms-copy/</link>
       <pubDate>Mon, 04 Jan 2021 00:10:56 +0530</pubDate>
       
-      <guid>https://www.prakharj.me/posts/using-computer-vision-to-ocr-registration-forms-copy/</guid>
+      <guid>https://www.prakharj.me/projects/using-computer-vision-to-ocr-registration-forms-copy/</guid>
       <description>Given a registration form such as this one, normal OCR techniques do not tend to work, since libraries like Tesseract and EasyOCR cannot decipher checkboxes and other box fields for written texts. Since these forms have boxes where letters need to be written, a better approach would be to first try to detect checkboxes and other boxed fields and then convert that handwritten text based on its location.
 Procedure using Standard OCR I printed a page of a sample registration form, wrote fake details and scanned it.</description>
     </item>

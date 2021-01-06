@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <title>Using Computer Vision to OCR Registration Forms | Prakhar Jain</title>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Using Computer Vision to OCR Registration Forms" />
+  <meta name="twitter:description" content=""/>
+  <meta name="twitter:site" content="https://twitter.com/_PrakharJ" />
+  <meta name="twitter:creator" content="https://twitter.com/_PrakharJ" />
+  
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+
+  
+  
+    
+ 
+  
+  
+  
+  
+  
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/post.min.b60e0932fe1c50c3d7c5b4f83ee9e4592363654d0f2abf05bbd0678d5b8a214c.css" integrity="sha256-tg4JMv4cUMPXxbT4PunkWSNjZU0PKr8Fu9BnjVuKIUw="/>
+  
+    
+    <link type="text/css" rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
+  
+  
+   
+   
+    
+
+<script type="application/ld+json">
+  
+    { 
+      "@context": "http://schema.org", 
+      "@type": "WebSite", 
+      "url": "https:\/\/www.prakharj.me\/projects\/using-computer-vision-to-ocr-registration-forms-copy\/",
+      "name": "Using Computer Vision to OCR Registration Forms",
+      "author": {
+        "@type": "Person",
+        "name": ""
+      },
+      "description": ""
+    }
+  
+  </script>
+</head>
+
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+ 
+
+  <nav class="nav" id="navigation">
+  <ul class="nav__list">
+    
+    
+      <li>
+        <a  href="/about">about</a>
+      </li>
+    
+      <li>
+        <a  href="/">home</a>
+      </li>
+    
+      <li>
+        <a  href="/posts/">posts</a>
+      </li>
+    
+      <li>
+        <a  class="active"
+         href="/projects">projects</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+  <main>
+    
+    
+
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title">Using Computer Vision to OCR Registration Forms</h1>
+            <time datetime="2021-01-04 00:10:56 &#43;0530 IST" class="post__date">Jan 4 2021</time> 
+          </header>
+          <article class="post__content">
+              
+<p>Given a registration form such as this <a href="https://content.sbigeneral.in/uploads/e1904ff17d084f6582d5cc43bb6e059e.pdf" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>one</a>
+, normal OCR techniques do not tend to work, since libraries like Tesseract and EasyOCR cannot decipher checkboxes and other box fields for written texts. Since these forms have boxes where letters need to be written, a better approach would be to first try to detect checkboxes and other boxed fields and then convert that handwritten text based on its location.</p>
+<h2 id="procedure-using-standard-ocr">Procedure using Standard OCR<a class="anchor" href="#procedure-using-standard-ocr">#</a></h2>
+<p>I printed a page of a sample registration form, wrote fake details and scanned it. Here is the picture of the scanned copy.</p>
+<p><img src="/ocr.png" alt="registration form image"></p>
+<p>When using EasyOCR for the document above, we get the following result.</p>
+<pre><code class="language-.language-python">import easyocr
+reader = easyocr.Reader(['en'])
+result = reader.readtext('ocr.jpg',detail = 0)
+print(result)
+</code></pre>
+<pre><code>['3EaG##!G#LEXIE#SI3IH3BU!THIES', 'Bangladesh', 'Bhutan', 'Nepal', 'Pakistan', 'Srilanka', 'Maldives', 'ADDITIONAL DISCOUNT', '3_0_2_2', 'Automobile Association of India. Merabership No.', '3 !', '3', 'Date of Expiry', '2', 'b', 'Vehicle specifically designed for Blind', 'Mentally challenged Person', 'Anti theft deyice', 'Usage Restricted to Oun premises', 'fandicapped', 'forly it not icensed for general', 'use by RTO)', 'road', 'Limit the Third Party Property Damage Cover to the statutory limit of Rs 6OOg/-', '(The Poiicy otherwise provides Third Party Property Damage cover of Rs', 'Rs 7.5 lakhs for Private Cars)', 'lakh for 2 wheelers', 'and', '#:#H#rg#s', 'Foreign Embassy/ Gonsulate', 'Driviny Tuitiun', 'Fiber Glass Tank', 'Cover for vehicles imported without Customs duty', 'Cover loss of accessories due to burglary, housebreaking or theft (Applicable only for Two-Wheelers)', 'Racing, Rallies, Speed Trials', 'Vintage Car', 'SECTION AL GFISURANGE AT, 1933', 'Na person shal ar efferto alloweither directy orindirec#yas an inducementto any persan to take ouf or renew or continue an insurance in respect of any kind of nskrelatingto lives or propertyin India, any rebate of whole', 'or part of the commission payable or any rebate of tne premium shown on the policy, nor shall any', 'person taking out or renewing or continuing a policy accept any rebate except such rebate as may be allowed in', 'accordance with the published prospectuses or tables ofthe Insurer ANYPERSON MAKING DEFAULTINCOMPLYNGMTHTHE PROMSIONS OF THIS SEGTION SHALL BELIABLEFOR A PENALTVMHIGHMAVEXTEND', 'TLhuFEES TEiiLAnni5.', 'PERSONAL ACCIDENT COVER', 'Lwner Driyer', '1. Personal Accident Coverfor owner dnveris compulsoryfor sum insured ofRs. 15,00,000;-', '2. CampusoryPi coverto owner driver cannotbe granted where a vehicie is ownedbya company a partnership fir ora simiariady corporate or where the owner does not hoidan eifective driving iicense', 'Unnaied eccupanis /Fassengers', 'sum insured per person in mutiples ot Rs IO,OOO/- tora max ofRs. 1OO,OOO/- per person for two wheelers &amp; Rs 2OO,OOO/- per person for priyate cars. The number of persons to be covered forthe purpose of', 'The', 'this Cover wil be equivalentto the registered carrying capacityofthe vehicle.', 'ADELMENIS LSTgPlcase Tekz/', 'Renewal Notice / Pelicy Copy', 'Payment Advice nstrument', 'NCB Reserving Declaration Letter', 'Driving License', 'RC BGuh', 'Vehicle Inspection Report', 'List ot Electrical Non Electrical Accessaries', 'Sale Deed', 'Vaiuatioi Certificate', 'Duu', 'KYC DOCuME#TS ATTACHEE i&quot;inusi in case ef annuai premiumn in CashJDu Fs. 5Jjduu and anove &amp; tor Lneque Hs.ivL', 'ana aveve)', 'Passport', 'Aadhar Card', &quot;Vcter's Identity Card&quot;, 'Govemment UID', 'Pan Card*', 'Telephone Bill', 'Driving License', 'Electricity Bill', 'Ration Card', 'ELEGTRONIC INSURANGE ACCOUNT BETAILS SECTION', 'want PRIVATE CAR/TW0 MMHEELER INSURANCE POLICV and related intormation in', 'Physical Format', 'Format (electronic}; as &amp; when applicable', 'Choose your Insurance Repository (For those selecting e-Format)', 'NSDL Data Managemen: Ltd', 'tDSL !surance Rejasito!y Ltg', 'Karvy lsirance Rejusitarij Lt!', 'GAi5 hegg5i!ui; 5#i##5 _::', 'g2l4', 'Ihave e Insurance Acccunt &amp; the No. is', 'MyCKYC No. (Central Know Your Gustomer registry number) is', '(lf available)', '3 3', '3', '2', 'PAYMENT DETAILS', 'CHEOUE', 'DD', 'CASH', 'EFT', 'DEBIT7CREDIT CARD', 'AEFUND AMOUNT !ILL BE DEPOSITED IMTHI$ BANK ACLCUNT ONLY UNLESS SHANGEJ SUBSEQUENTL!', 'CLAIH', '(AIl fields mandatory)', 'Please draw your Cheque (Nc payee only) in the nare of &quot;SBl General Insurance Company Limited&quot;', '3;4', 'tolzlol2lzlololo', 'insiruneni juasr', 'Li', '#41g4:4!', '2', 'jzil', 'A2', 'ANE', 'Baiik Name', 'HDLFLC', 'Lee', 'Branch', 'CCH', 'A', '4_5', '6', 'fyQ9', 'Bank Account No.', 'F', '3', 'ISG Code', 'e', '21', 'TALTIDELIES', 'VWehereby confirm thatal aremiumshave beer/ iiil be paid from bonafide sources and no premiums hare been/ wil be paid out ofproceeds ofcrime relatedto aryaf the oftence listed in Prevention of MoneyLaundering', 'Act 2OO2. Iunderstand thatthe Companyhas thenghtto call fordocuments to establish source of funds. The insurance Companyhas the nightto cancel the insurance contractin case! an have been found guiltybyany', 'competent courtoflawunder anystatues, directlyorindirectygovemingthe prevention oi moneylaunderinginIndia.', 'tNDiAN', 'jationaity: !ndian l!o- Indian lt Non inaian, piease specifyigunty', 'Type ofOrganization: Cerporations/ Gcvernments/ Nan- Govermental Organizations/ Society/ Trust Partnershin / International Organization Cooperatives/ Section25 Companies', 'NCB DECLARATION BY PROPOSER', 'WWe hereby declare that the rate of NCB claimed byme/us is correct and that NO CLA!Mhas arisen in the expiring policy period(Copy of Policy enclosed)', 'NNe', 'further undertake that if this declaration is found incorrect, all', 'benefits underte Policyin respectot Section1 ofthe Policywi# stand for teited&quot;', 'DECLARATION BY PBOPOSER', 'Ie hereby declare that the statements made by me/us in this Proposal Form are true and complete in all respects to the best of mylour knowledge and belief and that there is no other intomation, which is relevant to my', 'abplication ior insutance tatnas hotbeen disciusedto you. INe hereby agiee that statements maue tyme andl this ceclaraticil Shal ioii te SaSiS Bi#&amp; cuaci ieieeri me/us', 'SBl Geriera ins#ale Lengas;', 'ne', 'Limited (SBI General) and Ie agree to accept a palicy subjectte the conditions prescribed by SBI General and to pay premium on the amount estimated. Ie undertake to exercise al ordinaryand reasonable precautio:s', 'for safetyofthe prupertyas ifit were uninsured.', 'Ie understand tat the policy issued by the Company shall be voidable at the option of the Company in the event ofany mis- regresentation, mis-description or non disslosure/concealing of any material particulars by', 'melus. My ourtailure to complywith this obligation now mayresut in the rejection of my our claim and the avoidance of myour policy when a claim is made.', 'Ie hereby undertake thatif any additions/alterations are carned oulin the nisk proposed afterthe submission of this Proposal Form then the same sha# be conyeyedto SBI Genera immediately by melus.', 'INe understand that SBI General is under no abigation to acceot myjour Proposai tor insurance and the iability of SBl General does not commence on the receipt af this Proposal by SBI Genera and it does nat resultin a', 'concluded contract of insurance until the propusal has been accepted by SBI General and upon tuli realization ofthe premium by SBI General. If SBI General does not accept this Proposal, itwi! inform melus and refund any', 'payment received from mejus withoutinterest.', 'INe herebygive mylour conseit to SBI General that it can disclose use/hande, directy er through a third party; the information (including the sensitive personal data or information, ifany) provided in', 'this', 'Prepesal Form,', 'whereasl we have the aptien notto provide this censent or withdraw it atalater stage, furthe purose ofand in relation to the nsurance ceverage and benefits requested bymejus.', 'We hereby extend myjour consent to the Company for sharing mylour personal data with State Bank Group entities for specilic purpose of availing seryices aftered by State Bank Group (dlease strike this clause in case', 'you do notwish to disclose the personal data|', 'MEIWLDEeLHZ', '', '3i0', '0', '', '2', '0', 'Fiace:', 'Date:', 'Signaiure of Proposer', 'DECLARATIOI', 'ilt signed in Vernacular language 7lf you have afixed thimb impression above)', 'Applicable where the Proposeris illiterate aris suffering from a disabilitydue to which writing is restricted or where the Proposerhas signedin vernacularlanguage)', 'qiote: ine deiuw must de witessed Dysumeone DTci Maii iie HuvisotzinMley&amp;# u!ii&amp; isiijis:g', 'WWe certity that the product applied for by melus and the contents of the Proposal Form have been clearly explained to me/us and Vwe have tuly understood them. IWe turther certity that the replies in the', 'Proposal Formhave been recorded as perthe infarmation providedby mejus.', 'FFul name ofthe witness}', 'GRelation with the Proposer)', 'adult and inhabitant of (city)', 'and', 'doherebycertitythal! have read oul and explained the contents of the Proposal Form and all other documents incidentalto availing the insurance policy froin SBI General', 'residing at', 'Insurance CompanyLtd., to the Propaser/Primary insured and hejshe theyhave understood the same. Ideclare that whateverl have stated herein above is true and carrectto the best otknowledge and belief.', 'Signature of tha Htness', '2 2j0', '3&quot;', 'Date:', 'Place:', 'NEW', 'LEZ', 'Signature  Thumb impression of the Praposer', 'SB# Generai Insurance Campany Limited', 'IDAi Of India Reg. o. 1!4 dated 15/12/2009', 'G!1!: 0}66000!1}2009P10190546', '0[!!: $3G-1!40-P12-57-!/02-!1-12', 'SBl Logo disglayed gelangs ta Siate Bank Of india and used by SBI General insurance Co. Ltd. under license.']
+</code></pre>
+<p>The full code for this program can be viewed <a href="/ocrcode.html" 
+  
+  
+>here</a>
+</p>
+<p>As we can see, the results we have obtained here are quite lousy. Though the program does a good job of OCR-ing the computerised text, boxed fields create a huge problem.</p>
+<h2 id="using-the-boxdetect-library">Using the Boxdetect Library<a class="anchor" href="#using-the-boxdetect-library">#</a></h2>
+<p>This is where the <a href="https://pypi.org/project/boxdetect/" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>BoxDetect</a>
+ Library comes to our rescue.</p>
+<p>BoxDetect is a Python package based on OpenCV which allows you to easily detect rectangular shapes like character or checkbox boxes on scanned forms.</p>
+<p>We run BoxDetect using the following configurations and obtain the results:</p>
+<pre><code class="language-.language-python">
+from boxdetect import config
+
+file_name = 'ocr.jpg'
+
+cfg = config.PipelinesConfig()
+
+# important to adjust these values to match the size of boxes on your image
+cfg.width_range = (30,40)
+cfg.height_range = (25,40)
+
+# the more scaling factors the more accurate the results but also it takes more time to processing
+# too small scaling factor may cause false positives
+# too big scaling factor will take a lot of processing time
+cfg.scaling_factors = [0.9,0.85,0.99,0.99,0.98,0.97,0.89,0.6,0.5,0.4,0.78,0.80,0.3,0.2,0.1,0.33,0.44,0.22,0.11]
+
+# w/h ratio range for boxes/rectangles filtering
+cfg.wh_ratio_range = (0.5, 3)
+
+# group_size_range starting from 2 will skip all the groups
+# with a single box detected inside (like checkboxes)
+cfg.group_size_range = (2, 300)
+
+from boxdetect.pipelines import get_boxes
+
+rects, grouping_rects, image, output_image = get_boxes(
+    file_name, cfg=cfg, plot=False)
+
+plt.figure(figsize=(20,20))
+plt.imshow(output_image)
+plt.show()
+
+</code></pre>
+<p><img src="/ocrboxed.png" alt="boxed form image"></p>
+<p>Here we can see the green boxes signify the smaller boxes while the red boxes signify the larger boxed fields.</p>
+<p>Now we apply some Preprocessing to our given image for better OCR. Among all the phases of OCR, Preprocessing and Segmentation are the most important phases, as the accuracy of the OCR system highly depends upon how well Preprocessing and Segmentation are performed.</p>
+<pre><code class="language-.language-python">img = cv2.imread('ocr.jpg',0)
+# global thresholding
+ret1,th1 = cv2.threshold(img,127,255,cv2.THRESH_BINARY)
+# Otsu's thresholding
+ret2,th2 = cv2.threshold(img,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+# Otsu's thresholding after Gaussian filtering
+blur = cv2.GaussianBlur(img,(5,5),0)
+ret3,th3 = cv2.threshold(blur,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+# plot all the images and their histograms
+images = [img, 0, th1,
+          img, 0, th2,
+          blur, 0, th3]
+titles = ['Original Noisy Image','Histogram','Global Thresholding (v=127)',
+          'Original Noisy Image','Histogram',&quot;Otsu's Thresholding&quot;,
+          'Gaussian filtered Image','Histogram',&quot;Otsu's Thresholding&quot;]
+for i in range(3):
+    plt.figure(figsize=(50,50))
+    plt.subplot(3,3,i*3+1),plt.imshow(images[i*3],'gray')
+    plt.title(titles[i*3]), plt.xticks([]), plt.yticks([])
+    plt.subplot(3,3,i*3+3),plt.imshow(images[i*3+2],'gray')
+    plt.title(titles[i*3+2]), plt.xticks([]), plt.yticks([])
+
+plt.show()
+</code></pre>
+<p><img src="/Preprocessing.png" alt="Preprocessing"></p>
+<p>We choose the best preprocessing measure out of all the options and use the BoxDetect library again on the preprocessed image to get better results.</p>
+<p>Here are the results of BoxDetect on our preprocessed image, we can see that we were able to detect a few more fields this time.</p>
+<p><img src="/preprocessed.png" alt="Preprocessing"></p>
+<h2 id="detecting-if-the-checkbox-is-marked">Detecting if the Checkbox is marked<a class="anchor" href="#detecting-if-the-checkbox-is-marked">#</a></h2>
+<p>We check individual checkboxes to check if they are marked with &lsquo;ticks&rsquo; or they are empty</p>
+<pre><code class="language-.language-python">from boxdetect.pipelines import get_checkboxes
+
+checkboxes = get_checkboxes(
+    'ocr_binary_contrast2.jpg', cfg=cfg, px_threshold=0.1, plot=False, verbose=True)
+
+print(&quot;Output object type: &quot;, type(checkboxes))
+for checkbox in checkboxes:
+    print(&quot;Checkbox bounding rectangle (x,y,width,height): &quot;, checkbox[0])
+    print(&quot;Result of `contains_pixels` for the checkbox: &quot;, checkbox[1])
+    print(&quot;Display the cropout of checkbox:&quot;)
+    plt.figure(figsize=(1,1))
+    plt.imshow(checkbox[2])
+    plt.show()
+</code></pre>
+<p>Here we can see a part of the output for the above code, giving a &lsquo;True&rsquo; result if the checkbox is marked. Based on the location of the checkbox we are able to figure out the field that our user has marked.</p>
+<p><img src="/checkbox.png" alt="Checkboxes"></p>
+<h2 id="further-improvements">Further Improvements<a class="anchor" href="#further-improvements">#</a></h2>
+<ol>
+<li>The scanned copy here was of very low quality since i was using an old home scanner. Much better results can be obtained with higher quality scans</li>
+<li>Using commercial form recogniser techniques such as <a href="https://azure.microsoft.com/en-in/services/cognitive-services/form-recognizer/" 
+  
+   target="_blank" rel="noreferrer noopener" 
+>Azure Form Recogniser</a>
+ can help a lot</li>
+<li>Training using Supervised learning Models, since form format is the same. This was not possible in this project due to unavailability of training data</li>
+</ol>
+<p>The full code for the project can be viewed <a href="/OCR.html" 
+  
+  
+>here</a>
+</p>
+
+
+              
+          </article>
+          
+
+<ul class="tags__list">
+    
+    <li class="tag__item">
+        <a class="tag__link" href="https://www.prakharj.me/tags/ocr/">ocr</a>
+    </li>
+    <li class="tag__item">
+        <a class="tag__link" href="https://www.prakharj.me/tags/computer-vision/">computer-vision</a>
+    </li></ul>
+
+ <div class="pagination">
+  
+    <a class="pagination__item" href="https://www.prakharj.me/projects/timetable/">
+        <span class="pagination__label">Previous Post</span>
+        <span class="pagination__title">Timetable Application</span>
+    </a>
+  
+
+  
+    <a class="pagination__item" href="https://www.prakharj.me/projects/previous-year-papers-project/">
+      <span class="pagination__label">Next Post</span>
+      <span class="pagination__title" >College Previous Year Papers</span>
+    </a>
+  
+</div>
+
+          
+          <footer class="post__footer">
+            
+
+
+<div class="social-icons">
+  
+     
+    
+      <a class="social-icons__link" rel="me" title="Twitter"
+         href="https://twitter.com/_PrakharJ"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('https://www.prakharj.me/svg/twitter.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__link" rel="me" title="GitHub"
+         href="https://github.com/prakhar-ai"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('https://www.prakharj.me/svg/github.svg')"></div>
+      </a>
+    
+  
+     
+    
+      <a class="social-icons__link" rel="me" title="Email"
+         href="mailto:prakharalt@gmail.com"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('https://www.prakharj.me/svg/email.svg')"></div>
+      </a>
+    
+     
+</div>
+
+            <p>© 2021</p>
+          </footer>
+          </div>
+      </div>
+      
+    </div>
+    
+
+  </main>
+
+   
+
+  
+  <script src="/js/index.min.49e4d8a384357d9b445b87371863419937ede9fa77737522ffb633073aebfa44.js" integrity="sha256-SeTYo4Q1fZtEW4c3GGNBmTft6fp3c3Ui/7YzBzrr&#43;kQ=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+
+  
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+
+  
+
+
+</body>
+
+</html>
