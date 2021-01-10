@@ -43,6 +43,16 @@
   </url>
   
   <url>
+    <loc>https://www.prakharj.me/posts/</loc>
+    <lastmod>2021-01-04T00:10:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.prakharj.me/posts/using-computer-vision-to-ocr-registration-forms/</loc>
+    <lastmod>2021-01-04T00:10:56+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.prakharj.me/projects/using-computer-vision-to-ocr-registration-forms/</loc>
     <lastmod>2021-01-04T00:10:56+05:30</lastmod>
   </url>
@@ -54,11 +64,6 @@
   
   <url>
     <loc>https://www.prakharj.me/tags/node-js/</loc>
-    <lastmod>2020-10-29T00:08:49+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.prakharj.me/posts/</loc>
     <lastmod>2020-10-29T00:08:49+05:30</lastmod>
   </url>
   
